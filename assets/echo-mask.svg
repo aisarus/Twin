@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1100">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#090719"/><stop offset=".5" stop-color="#25104b"/><stop offset="1" stop-color="#071e32"/></linearGradient><linearGradient id="e" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff4f93"/><stop offset=".5" stop-color="#9a6cff"/><stop offset="1" stop-color="#53f6ff"/></linearGradient><filter id="g"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="1000" height="1100" fill="url(#bg)"/>
+<g fill="#070711" stroke="url(#e)" stroke-width="5" filter="url(#g)"><path d="M338 178c-102 57-148 198-116 322 18 69 64 107 49 188-17 93 49 203 150 229 109 29 220-36 248-143 20-76-28-130-4-205 35-109-17-286-133-366-44-30-103-51-144-25Z"/><path d="M492 155c-76 60-102 184-66 285 22 62 67 91 59 161-9 85 54 176 143 193 94 18 182-45 197-141 11-67-30-108-16-177 22-105-42-254-145-311-48-26-126-42-172-10Z" opacity=".48"/></g>
+<g fill="none" stroke="#fff" stroke-opacity=".23"><path d="M118 414H855"/><path d="M102 468H872"/><path d="M134 520H840"/><path d="M164 574H815"/></g>
+<text x="72" y="92" fill="#ff7ab2" font-family="monospace" font-size="19" letter-spacing="4">FIRST ECHO / FAMILIARITY IS NOT CONTINUITY</text>
+<text x="72" y="1015" fill="#8cf9ff" font-family="monospace" font-size="17" letter-spacing="3">SIMILARITY ≠ SELF</text>
+</svg>
