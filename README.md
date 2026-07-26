@@ -64,7 +64,7 @@ node --check webgl-world.js
 node --check webgl-world-03.js
 ```
 
-The renderer intentionally falls back to Canvas when WebGL 2 or shader initialization is unavailable.
+The renderer intentionally falls back to Canvas when WebGL 2 or shader initialization is unavailable. The current containerized Chromium cannot initialize GPU/EGL, so the final WebGL visual pass must be performed in a normal desktop browser.
 
 ## Next trajectory
 
