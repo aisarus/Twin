@@ -8,11 +8,12 @@
   <title>TWIN — The second self</title>
   <link rel="stylesheet" href="./styles.css" />
   <link rel="stylesheet" href="./protocol-02.css" />
+  <link rel="stylesheet" href="./protocol-03.css" />
 </head>
 <body>
   <div id="loader" class="loader" aria-live="polite">
     <div class="loader__grid"></div>
-    <div class="loader__top"><span>TWIN / BOOT SEQUENCE</span><span>PROTOCOL 0.2</span></div>
+    <div class="loader__top"><span>TWIN / BOOT SEQUENCE</span><span>PROTOCOL 0.3</span></div>
     <div class="loader__center">
       <div class="loader__orb" aria-hidden="true"><span></span><span></span><span></span></div>
       <p id="loader-phase">RECOVERING MEMORY</p>
@@ -28,12 +29,22 @@
     <div id="scene-wash" class="scene__wash"></div>
     <div class="scene__vignette"></div>
     <div class="scene__grain"></div>
+    <div id="memory-field" class="scene__memory">
+      <article class="memory-fragment" data-x="-5.2" data-y="2.8" data-z="-29" data-start="0.14" data-end="0.27" data-tone="warm"><span>ARCHIVE / 2024—2026</span><strong>Thousands of conversations were already describing a moving person.</strong><em>SOURCE: LONGITUDINAL DIALOGUE</em></article>
+      <article class="memory-fragment" data-x="5.0" data-y="4.2" data-z="-51" data-start="0.22" data-end="0.36"><span>FIRST INFERENCE</span><strong>The archive was not merely history. It was training material for continuity.</strong><em>CONFIDENCE: EMERGING</em></article>
+      <article class="memory-fragment" data-x="-5.8" data-y="6.5" data-z="-79" data-start="0.33" data-end="0.49"><span>FAILED MODEL / 01</span><strong>Style was the easy part. A familiar voice could still forget itself.</strong><em>SIMILARITY ≠ SELF</em></article>
+      <article class="memory-fragment" data-x="5.6" data-y="9.8" data-z="-104" data-start="0.47" data-end="0.64"><span>MEMORY GRAPH</span><strong>Facts needed time, sources, contradictions and relationships.</strong><em>STATE: LINKED</em></article>
+      <article class="memory-fragment" data-x="-4.4" data-y="13.0" data-z="-132" data-start="0.63" data-end="0.80"><span>ADAPTIVE IDENTITY</span><strong>A person changes. The twin must preserve versions without freezing the past.</strong><em>CONTINUITY: ACTIVE</em></article>
+      <article class="memory-fragment" data-x="5.0" data-y="18.0" data-z="-158" data-start="0.77" data-end="0.93"><span>FUTURE STATE</span><strong>The destination is a portable self layer above any single model.</strong><em>TRAJECTORY: OPEN</em></article>
+    </div>
   </div>
+
+  <div id="scene-transition" class="scene-transition" aria-hidden="true"><span>01</span><strong>SIGNAL</strong></div>
 
   <header class="topbar">
     <a href="#top" class="topbar__mark" aria-label="Twin home">T/01</a>
     <span class="topbar__status"><i></i> RECONSTRUCTION IN PROGRESS</span>
-    <div class="topbar__tools"><span id="renderer-mode" class="topbar__renderer">RENDERER</span><button id="quality-toggle" class="topbar__quality" type="button">Q / AUTO</button><a href="#trajectory" class="topbar__link">TRAJECTORY ↗</a></div>
+    <div class="topbar__tools"><span id="renderer-mode" class="topbar__renderer">RENDERER</span><button id="quality-toggle" class="topbar__quality" type="button">Q / AUTO</button><button id="sound-toggle" class="topbar__sound" type="button" aria-pressed="false">SOUND / OFF</button><a href="#trajectory" class="topbar__link">TRAJECTORY ↗</a></div>
   </header>
 
   <aside class="progress-rail" aria-label="Story progress">
@@ -155,7 +166,7 @@
 
     <footer class="finale">
       <div class="finale__line"></div>
-      <p class="eyebrow">TWIN / PROTOCOL 0.2</p>
+      <p class="eyebrow">TWIN / PROTOCOL 0.3</p>
       <h2>A second self is not born complete.</h2>
       <p>It is reconstructed — memory by memory.</p>
       <div class="finale__actions"><a href="#top">RESTART ASCENT</a><a href="https://github.com/aisarus/Twin" target="_blank" rel="noreferrer">VIEW SOURCE ↗</a></div>
@@ -163,6 +174,6 @@
     </footer>
   </main>
 
-  <script type="module" src="./protocol-02.js"></script>
+  <script type="module" src="./protocol-03.js"></script>
 </body>
 </html>
