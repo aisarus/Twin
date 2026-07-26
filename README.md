@@ -12,7 +12,7 @@ Protocol 0.7 / 2D pilot
 - cyan memory light
 - gold appears only at the moment of emergence
 - lightweight scroll choreography
-- no active Three.js, WebGL, framework build or external CDN
+- no active Three.js, WebGL, framework runtime or external CDN
 - real HTML typography and accessible controls
 - mobile-first static deployment
 
@@ -26,20 +26,20 @@ Then open `http://localhost:4173`.
 
 ## Deploy to Vercel
 
-The root `vercel.json` explicitly forces a framework-free static deployment:
+The root `vercel.json` explicitly overrides the old Angular project settings:
 
 - Framework Preset: Other
-- Build Command: disabled
 - Install Command: skipped
-- Output Directory: repository root
+- Build Command: copies `index.html`, `pilot.css` and `pilot.js` into `public`
+- Output Directory: `public`
 
-A push to `main` should deploy the root `index.html` directly.
+A push to `main` triggers a static deployment without Angular or npm dependencies.
 
 ## Active files
 
 - `index.html` — single-scene SVG stage and HTML story beats
 - `pilot.css` — graphic art direction and responsive composition
-- `pilot.js` — scroll timing and the delayed-reflection choreography
+- `pilot.js` — scroll timing and delayed-reflection choreography
 - `vercel.json` — static deployment overrides
 
 The older experimental files remain in the repository for reference but are not loaded by the active page.
