@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+<defs><radialGradient id="bg"><stop stop-color="#24113f"/><stop offset=".52" stop-color="#081939"/><stop offset="1" stop-color="#040711"/></radialGradient><linearGradient id="r"><stop stop-color="#ffca67"/><stop offset=".3" stop-color="#ff5d9e"/><stop offset=".66" stop-color="#8e68ff"/><stop offset="1" stop-color="#58f8ff"/></linearGradient><filter id="g"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="1200" height="900" rx="34" fill="url(#bg)"/>
+<g transform="translate(600 470)" fill="none" stroke="url(#r)" filter="url(#g)"><ellipse rx="392" ry="110" stroke-width="5" transform="rotate(-8)"/><ellipse rx="320" ry="174" stroke-width="4" transform="rotate(18)"/><ellipse rx="248" ry="220" stroke-width="3" transform="rotate(-18)"/><ellipse rx="161" ry="262" stroke-width="2" transform="rotate(33)"/></g>
+<g fill="#fff" font-family="monospace" font-size="16"><text x="112" y="470">PAST SELF</text><text x="535" y="470">CURRENT SELF</text><text x="950" y="470">EMERGING SELF</text></g>
+<g fill="#fff" filter="url(#g)"><circle cx="210" cy="462" r="8"/><circle cx="600" cy="470" r="10"/><circle cx="996" cy="463" r="8"/></g>
+<text x="68" y="90" fill="#ffd47d" font-family="monospace" font-size="20" letter-spacing="4">CONTINUITY / MULTIPLE TRUE VERSIONS OF ONE PERSON</text>
+</svg>
