@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#041d24"/><stop offset=".5" stop-color="#0c2344"/><stop offset="1" stop-color="#1b0f35"/></linearGradient><linearGradient id="p" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#5affd5"/><stop offset=".38" stop-color="#72a7ff"/><stop offset=".7" stop-color="#d866ff"/><stop offset="1" stop-color="#ffb44f"/></linearGradient><filter id="g"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="1200" height="900" rx="34" fill="url(#bg)"/>
+<g fill="none" stroke="url(#p)" stroke-width="8" stroke-linecap="round" filter="url(#g)"><path d="M126 454H352c95 0 90-182 189-182h124"/><path d="M352 454c97 0 101 181 200 181h112"/><path d="M665 272c103 0 111-103 205-103h190"/><path d="M665 272c105 0 106 110 206 110h189"/><path d="M664 635c100 0 112-99 208-99h188"/><path d="M664 635c104 0 110 103 209 103h187"/></g>
+<g fill="#06121d" stroke="url(#p)" stroke-width="4"><circle cx="126" cy="454" r="38"/><circle cx="352" cy="454" r="45"/><circle cx="665" cy="272" r="34"/><circle cx="664" cy="635" r="34"/><circle cx="1060" cy="169" r="26"/><circle cx="1060" cy="382" r="26"/><circle cx="1060" cy="536" r="26"/><circle cx="1060" cy="738" r="26"/></g>
+<g fill="#fff" font-family="monospace" font-size="16" text-anchor="middle"><text x="126" y="460">INPUT</text><text x="352" y="460">NOTICE</text><text x="665" y="278">VALUE</text><text x="664" y="641">CONTEXT</text></g>
+<text x="68" y="90" fill="#79ffd9" font-family="monospace" font-size="20" letter-spacing="4">DECISION MODEL / FROM WORDING TO CHOICE</text>
+</svg>
