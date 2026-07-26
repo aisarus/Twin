@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1400">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#05091c"/><stop offset=".48" stop-color="#1b1554"/><stop offset="1" stop-color="#2d0a27"/></linearGradient>
+ <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#45f4ff"/><stop offset=".48" stop-color="#7f5dff"/><stop offset="1" stop-color="#ff5e85"/></linearGradient>
+ <linearGradient id="warm" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#ff6f47"/><stop offset="1" stop-color="#ffcf73"/></linearGradient>
+ <filter id="g"><feGaussianBlur stdDeviation="13" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse"><path d="M44 0H0V44" fill="none" stroke="#fff" stroke-opacity=".055"/></pattern>
+</defs>
+<rect width="1100" height="1400" fill="url(#bg)"/><rect width="1100" height="1400" fill="url(#grid)"/>
+<path d="M273 111 823 61 902 1266 198 1322Z" fill="#03050e" stroke="url(#edge)" stroke-width="5" filter="url(#g)"/>
+<path d="M308 167 786 127 853 1196 249 1241Z" fill="#080b1b" stroke="#91eaff" stroke-opacity=".22"/>
+<g font-family="monospace" font-size="15" letter-spacing="2">
+ <text x="338" y="214" fill="#7ef5ff">CONVERSATION ARCHIVE / 80,000+ SIGNALS</text>
+ <text x="338" y="248" fill="#ffb780">2024—2026 / TEMPORAL SOURCE MAP</text>
+</g>
+<g stroke-linecap="round">
+ <path d="M338 321H713" stroke="#6cf7ff" stroke-width="7"/><path d="M338 350H615" stroke="#6cf7ff" stroke-opacity=".28" stroke-width="4"/>
+ <path d="M338 408H759" stroke="#9a75ff" stroke-width="7"/><path d="M338 437H680" stroke="#9a75ff" stroke-opacity=".3" stroke-width="4"/>
+ <path d="M338 496H703" stroke="url(#warm)" stroke-width="7"/><path d="M338 525H598" stroke="#ff8a62" stroke-opacity=".34" stroke-width="4"/>
+ <path d="M338 584H783" stroke="#ff5a99" stroke-width="7"/><path d="M338 613H721" stroke="#ff5a99" stroke-opacity=".31" stroke-width="4"/>
+ <path d="M338 672H657" stroke="#5cf5da" stroke-width="7"/><path d="M338 701H742" stroke="#5cf5da" stroke-opacity=".27" stroke-width="4"/>
+ <path d="M338 760H768" stroke="#678bff" stroke-width="7"/><path d="M338 789H649" stroke="#678bff" stroke-opacity=".3" stroke-width="4"/>
+ <path d="M338 848H718" stroke="#ffbd65" stroke-width="7"/><path d="M338 877H777" stroke="#ffbd65" stroke-opacity=".25" stroke-width="4"/>
+ <path d="M338 936H752" stroke="#bd65ff" stroke-width="7"/><path d="M338 965H633" stroke="#bd65ff" stroke-opacity=".3" stroke-width="4"/>
+</g>
+<g fill="#fff" filter="url(#g)"><circle cx="789" cy="319" r="8"/><circle cx="746" cy="495" r="8"/><circle cx="802" cy="583" r="8"/><circle cx="690" cy="671" r="8"/><circle cx="797" cy="759" r="8"/></g>
+<path d="M338 1064H771" stroke="#fff" stroke-opacity=".18"/><text x="338" y="1109" fill="#fff" opacity=".55" font-family="monospace" font-size="17">THE ARCHIVE IS NOT A FILE. IT IS A PERSON MOVING THROUGH TIME.</text>
+</svg>
