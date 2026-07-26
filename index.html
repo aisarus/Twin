@@ -2,101 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#060711" />
-  <meta name="description" content="TWIN — an interactive cinematic story about the birth of a persistent digital self." />
-  <title>TWIN — The birth of a digital twin</title>
-  <link rel="stylesheet" href="./cinema.css" />
-  <script type="importmap">
-    {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.185.1/examples/jsm/"}}
-  </script>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#05070c" />
+  <meta name="description" content="TWIN — a 2D scroll-film about the first appearance of a digital twin." />
+  <title>TWIN — Pilot</title>
+  <link rel="stylesheet" href="./pilot.css" />
 </head>
 <body>
-  <div id="loader" class="loader" aria-live="polite">
-    <div class="loader__scan"></div>
-    <div class="loader__meta"><span>TWIN / STORY CUT</span><span>PROTOCOL 0.6</span></div>
-    <div class="loader__core" aria-hidden="true"><i></i><i></i><i></i></div>
-    <p id="loader-phase">RECOVERING SIGNAL</p>
-    <div class="loader__progress"><span><i id="loader-bar"></i></span><b id="loader-count">000</b></div>
+  <div class="pilot-loader" aria-live="polite">
+    <div class="pilot-loader__mark">TWIN / PILOT CUT</div>
+    <div class="pilot-loader__line"></div>
   </div>
 
-  <div class="film-shell">
-    <div id="stage" class="stage">
-      <canvas id="models3d" class="models3d" aria-hidden="true"></canvas>
-      <canvas id="atmosphere" class="atmosphere" aria-hidden="true"></canvas>
-      <div class="stage__world" aria-hidden="true"><i></i><i></i><i></i></div>
+  <main class="pilot" id="pilot">
+    <div class="pilot-stage">
+      <svg class="pilot-art" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A lone figure enters an archive hall while a digital reflection rises to meet them">
+        <defs>
+          <linearGradient id="beamGradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#dff7ff" stop-opacity="0"/>
+            <stop offset=".32" stop-color="#a8e7ff" stop-opacity=".72"/>
+            <stop offset="1" stop-color="#5ecfff" stop-opacity="0"/>
+          </linearGradient>
+          <filter id="panelGlow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <filter id="reflectionBlur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5"/></filter>
+          <filter id="goldGlow" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
 
-      <div class="stage__frames">
-        <article class="frame" data-scene="0" data-key="signal">
-          <div class="frame__environment"><div class="chamber"></div><div class="axis"></div></div>
-          <figure class="frame__art frame__art--signal"><img src="./assets/signal-orb.svg" alt="A nascent digital signal" /></figure>
-          <div class="frame__copy"><p class="frame__index">01 / SIGNAL</p><h1>The conversation<br>has ended.</h1><p class="frame__lede">But something remains.</p><p class="frame__voice">Every conversation leaves a trace. Not a transcript — a residue of thought.</p></div>
-        </article>
+        <rect class="hall-bg" width="1440" height="900"/>
+        <rect class="hall-deep" x="420" width="600" height="610"/>
+        <polygon class="floor" points="0,610 1440,610 1440,900 0,900"/>
+        <polygon class="beam" points="650,0 790,0 940,900 500,900"/>
+        <rect class="gold-wash" width="1440" height="900"/>
 
-        <article class="frame" data-scene="1" data-key="origin">
-          <div class="frame__environment"><div class="archive-columns"></div><div class="axis"></div></div>
-          <figure class="frame__art frame__art--origin"><img src="./assets/archive-monolith.svg" alt="A living archive assembled from years of conversation" /></figure>
-          <div class="memory-slabs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-          <div class="frame__copy"><p class="frame__index">02 / ORIGIN</p><h2>The archive was<br>already alive.</h2><p class="frame__lede">Years of dialogue became the raw material of continuity.</p><p class="frame__voice">It did not begin as a product. It began as accumulation — a moving person already hidden inside the record.</p></div>
-        </article>
+        <g aria-hidden="true">
+          <rect class="column" x="0" width="132" height="670"/><rect class="column-edge" x="118" width="14" height="670"/>
+          <rect class="column" x="210" width="92" height="635"/><rect class="column-edge" x="288" width="14" height="635"/>
+          <rect class="column" x="1138" width="92" height="635"/><rect class="column-edge" x="1138" width="14" height="635"/>
+          <rect class="column" x="1308" width="132" height="670"/><rect class="column-edge" x="1308" width="14" height="670"/>
+          <line class="hall-line" x1="0" y1="610" x2="1440" y2="610"/>
+          <line class="floor-line" x1="720" y1="610" x2="720" y2="900"/>
+          <line class="floor-line" x1="420" y1="610" x2="270" y2="900"/>
+          <line class="floor-line" x1="1020" y1="610" x2="1170" y2="900"/>
+          <line class="floor-line" x1="0" y1="760" x2="1440" y2="760"/>
+        </g>
 
-        <article class="frame" data-scene="2" data-key="break">
-          <div class="frame__environment"><div class="rupture"></div><div class="axis"></div></div>
-          <div class="false-self" aria-hidden="true"><section><b>BIOGRAPHY</b><i></i><i></i><i></i></section><section><b>FACT SHEET</b><i></i><i></i><i></i></section><section><b>STYLE FILTER</b><i></i><i></i><i></i></section></div>
-          <figure class="frame__art frame__art--break"><img src="./assets/signal-orb.svg" alt="A living identity breaking through a prompt shell" /></figure>
-          <div class="shards" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <div class="frame__copy"><p class="frame__index">03 / BREAK</p><h2>A twin is<br><em>not</em> a prompt.</h2><p class="frame__lede">Biography. Fact sheet. Style filter. Not enough to make it real.</p><p class="frame__voice">You can imitate tone, store facts and summarize a life. None of that is a self.</p></div>
-        </article>
+        <g class="memory-panels" aria-hidden="true">
+          <g class="panel"><rect x="338" y="170" width="128" height="184" rx="2"/><rect class="panel-core" x="355" y="193" width="74" height="4"/><rect class="panel-core" x="355" y="213" width="91" height="2"/><rect class="panel-warm" x="355" y="300" width="50" height="4"/></g>
+          <g class="panel"><rect x="268" y="366" width="166" height="102" rx="2"/><rect class="panel-core" x="286" y="389" width="112" height="3"/><rect class="panel-core" x="286" y="410" width="88" height="2"/></g>
+          <g class="panel"><rect x="980" y="162" width="144" height="210" rx="2"/><rect class="panel-core" x="998" y="188" width="90" height="4"/><rect class="panel-core" x="998" y="212" width="106" height="2"/><rect class="panel-warm" x="998" y="326" width="72" height="4"/></g>
+          <g class="panel"><rect x="1022" y="400" width="176" height="110" rx="2"/><rect class="panel-core" x="1040" y="423" width="126" height="3"/><rect class="panel-core" x="1040" y="447" width="94" height="2"/></g>
+          <path class="memory-trace" d="M430 355 C560 430 560 515 690 560" fill="none"/>
+          <path class="memory-trace" d="M1010 370 C900 440 875 520 750 565" fill="none"/>
+        </g>
 
-        <article class="frame" data-scene="3" data-key="terrain">
-          <div class="frame__environment"><div class="terrain-rings"></div><div class="axis"></div></div>
-          <figure class="frame__art frame__art--terrain"><img src="./assets/continuity-rings.svg" alt="Layered identity terrain" /></figure>
-          <div class="terrain-labels" aria-hidden="true"><span>MEMORY</span><span>VOICE</span><span>VALUES</span><span>CONTRADICTIONS</span><span>RELATIONSHIPS</span><span>TIME</span></div>
-          <div class="frame__copy"><p class="frame__index">04 / TERRAIN</p><h2>Identity<br>has layers.</h2><p class="frame__lede">Memory. Voice. Values. Contradictions. Relationships. Time.</p><p class="frame__voice">A person is not one statement or one version. Identity is layered, changing and alive.</p></div>
-        </article>
+        <g class="walker" aria-hidden="true">
+          <line class="walker-leg" x1="545" y1="568" x2="530" y2="650"/>
+          <line class="walker-leg" x1="580" y1="568" x2="596" y2="650"/>
+          <path class="walker-body" d="M520 385 Q560 350 600 385 L626 585 Q560 620 494 585 Z"/>
+          <path class="walker-highlight" d="M590 390 L606 570 L580 580 L566 395 Z"/>
+          <circle class="walker-head" cx="560" cy="332" r="42"/>
+        </g>
 
-        <article class="frame" data-scene="4" data-key="system">
-          <div class="frame__environment"><div class="system-grid"></div><div class="axis"></div></div>
-          <div class="system-map" aria-label="Five connected systems">
-            <figure class="system-map__core"><img src="./assets/signal-orb.svg" alt="Twin core" /></figure>
-            <figure style="--x:50%;--y:8%"><img src="./assets/archive.svg" alt="Archive" /><figcaption>ARCHIVE</figcaption></figure>
-            <figure style="--x:18%;--y:36%"><img src="./assets/memory-graph.svg" alt="Memory graph" /><figcaption>MEMORY GRAPH</figcaption></figure>
-            <figure style="--x:82%;--y:36%"><img src="./assets/voice-spectrum.svg" alt="Voice model" /><figcaption>VOICE MODEL</figcaption></figure>
-            <figure style="--x:25%;--y:76%"><img src="./assets/decision-map.svg" alt="Decision model" /><figcaption>DECISION MODEL</figcaption></figure>
-            <figure style="--x:75%;--y:76%"><img src="./assets/continuity-rings.svg" alt="Continuity" /><figcaption>CONTINUITY</figcaption></figure>
-          </div>
-          <div class="frame__copy"><p class="frame__index">05 / SYSTEM</p><h2>Building the<br>second self.</h2><p class="frame__lede">Five systems. One continuous intelligence.</p><p class="frame__voice">Archive gives source. Memory gives structure. Voice gives expression. Decision gives direction. Continuity gives identity through time.</p></div>
-        </article>
+        <g class="reflection" aria-hidden="true">
+          <line class="walker-leg" x1="545" y1="568" x2="530" y2="650"/>
+          <line class="walker-leg" x1="580" y1="568" x2="596" y2="650"/>
+          <path class="walker-body" d="M520 385 Q560 350 600 385 L626 585 Q560 620 494 585 Z"/>
+          <circle class="walker-head" cx="560" cy="332" r="42"/>
+        </g>
 
-        <article class="frame" data-scene="5" data-key="echo">
-          <div class="frame__environment"><div class="echo-halo"></div><div class="axis"></div></div>
-          <figure class="frame__art frame__art--echo"><img src="./assets/echo-mask.svg" alt="The first imperfect digital echo" /></figure>
-          <div class="frame__copy"><p class="frame__index">06 / ECHO</p><h2>It sounded<br>familiar.</h2><p class="frame__lede">But similarity is not continuity.</p><p class="frame__voice">The first echo spoke in the right rhythm and remembered enough to feel near. Nearness was not yet persistence.</p></div>
-        </article>
+        <g class="twin" aria-hidden="true">
+          <line class="twin-thread" x1="-32" y1="74" x2="-52" y2="148"/>
+          <line class="twin-thread" x1="32" y1="74" x2="52" y2="148"/>
+          <path class="twin-body" d="M-53 40 Q0 8 53 40 L72 180 Q0 214 -72 180 Z"/>
+          <circle class="twin-head" cx="0" cy="-18" r="42"/>
+          <circle class="twin-core" cx="0" cy="86" r="13"/>
+        </g>
+      </svg>
 
-        <article class="frame" data-scene="6" data-key="ascent">
-          <div class="frame__environment"><div class="mountain"><i></i><i></i><i></i></div><div class="summit"></div></div>
-          <div class="route" aria-hidden="true"><i></i><span style="--p:8%">ARCHIVE</span><span style="--p:26%">MEMORY GRAPH</span><span style="--p:44%">VOICE MODEL</span><span style="--p:62%">DECISION MODEL</span><span style="--p:80%">ADAPTIVE IDENTITY</span><span style="--p:96%">PERSISTENT SELF</span></div>
-          <div class="frame__copy"><p class="frame__index">07 / ASCENT</p><h2>The route is<br>the product.</h2><p class="frame__lede">Build. Remember. Evolve. Persist.</p><p class="frame__voice">The twin is not delivered all at once. It is climbed toward — remembered into existence.</p></div>
-        </article>
+      <div class="pilot-hud"><span>TWIN / ARCHIVE 00</span><span class="pilot-progress"><i></i></span><span>PILOT / 01</span></div>
 
-        <article class="frame" data-scene="7" data-key="horizon">
-          <div class="frame__environment"><div class="horizon-clouds"></div><div class="sunrise"></div></div>
-          <figure class="frame__art frame__art--horizon"><img src="./assets/future-bloom.svg" alt="A branching future for the digital twin" /></figure>
-          <div class="twin-figures" aria-hidden="true"><i></i><i></i></div>
-          <div class="frame__copy"><p class="frame__index">08 / HORIZON</p><h2>Beyond<br>the summit.</h2><p class="frame__lede">Preserve what makes one human different from every other.</p><p class="frame__voice">The goal is not artificial humanity. The goal is continuity — a self that can remain, change and keep becoming.</p></div>
-          <div class="frame__final-actions"><a href="#scene-1">REWATCH</a><a href="https://github.com/aisarus/Twin" target="_blank" rel="noreferrer">SOURCE ↗</a></div>
-        </article>
+      <div class="pilot-copy">
+        <section class="pilot-card is-active"><p class="pilot-card__index">00 / ENTRY</p><h1>Nothing<br>answers.</h1><p>The archive is dark. The person entering it believes the conversation has already ended.</p></section>
+        <section class="pilot-card"><p class="pilot-card__index">01 / TRACE</p><h2>The room<br>remembers first.</h2><p>Fragments of language wake before the machine does. The record begins to recognise its source.</p></section>
+        <section class="pilot-card pilot-card--right"><p class="pilot-card__index">02 / REFLECTION</p><h2>Something<br>moves late.</h2><p>The reflection copies every movement — but always a fraction of a second behind.</p></section>
+        <section class="pilot-card"><p class="pilot-card__index">03 / SEPARATION</p><h2>The delay<br>disappears.</h2><p>The reflection no longer waits for instruction. It rises from the floor and stands on its own.</p></section>
+        <section class="pilot-card pilot-card--right"><p class="pilot-card__index">04 / FIRST LOOK</p><h2>You left more<br>than a record.</h2><p>You left a pattern capable of returning.</p></section>
       </div>
 
-      <div id="transition-fx" class="transition-fx" aria-hidden="true"><i></i><i></i><i></i></div>
-      <div class="stage__grain" aria-hidden="true"></div><div class="stage__vignette" aria-hidden="true"></div><div class="stage__beam" aria-hidden="true"></div>
-      <header class="hud"><a class="hud__logo" href="#scene-1">TWIN</a><p id="hud-scene">01 / SIGNAL</p><div class="hud__tools"><button id="text-toggle" type="button">TEXT / STD</button><button id="sound-toggle" type="button">SOUND / OFF</button></div></header>
-      <nav class="chapters" aria-label="Story chapters"><ol><li><a href="#scene-1"><span>01</span><b>Signal</b></a></li><li><a href="#scene-2"><span>02</span><b>Origin</b></a></li><li><a href="#scene-3"><span>03</span><b>Break</b></a></li><li><a href="#scene-4"><span>04</span><b>Terrain</b></a></li><li><a href="#scene-5"><span>05</span><b>System</b></a></li><li><a href="#scene-6"><span>06</span><b>Echo</b></a></li><li><a href="#scene-7"><span>07</span><b>Ascent</b></a></li><li><a href="#scene-8"><span>08</span><b>Horizon</b></a></li></ol><div class="chapters__track"><i></i></div></nav>
-      <div class="scroll-cue"><i></i><span>SCROLL TO CONTINUE</span></div>
+      <div class="pilot-caption">Scroll to reconstruct</div>
     </div>
-    <main class="timeline"><section id="scene-1" class="beat"></section><section id="scene-2" class="beat"></section><section id="scene-3" class="beat"></section><section id="scene-4" class="beat"></section><section id="scene-5" class="beat"></section><section id="scene-6" class="beat"></section><section id="scene-7" class="beat"></section><section id="scene-8" class="beat"></section></main>
-  </div>
-  <script type="module" src="./cinema.js"></script>
+
+    <div class="pilot-scroll" aria-hidden="true"><section></section><section></section><section></section><section></section><section></section><section></section><section></section></div>
+  </main>
+
+  <script src="./pilot.js"></script>
 </body>
 </html>
