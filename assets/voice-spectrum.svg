@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#10052b"/><stop offset=".52" stop-color="#251050"/><stop offset="1" stop-color="#061c3e"/></linearGradient><linearGradient id="v" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#ff4c99"/><stop offset=".5" stop-color="#9e65ff"/><stop offset="1" stop-color="#51f7ff"/></linearGradient><filter id="g"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="1200" height="900" rx="34" fill="url(#bg)"/>
+<path d="M498 150c-93 39-143 143-124 250 11 62 47 100 31 176-14 66 42 150 124 171 87 23 177-28 200-113 17-62-22-108-5-169 25-89-17-232-111-295-31-21-76-36-115-20Z" fill="#070713" stroke="url(#v)" stroke-width="5" filter="url(#g)"/>
+<g fill="none" stroke="url(#v)" stroke-width="3" opacity=".75"><path d="M93 478c42-7 59-71 98-68 42 3 36 127 82 124 46-3 36-178 83-176 44 2 40 238 86 236 48-2 40-319 89-316 44 2 37 370 81 369 47-2 39-302 83-302 44 0 38 228 84 228 44 0 40-164 82-161 38 3 43 91 85 85 39-6 48-52 78-47 36 6 40 48 77 42"/></g>
+<g font-family="monospace" font-size="18" letter-spacing="3"><text x="70" y="92" fill="#ff7bb3">VOICE MODEL / RHYTHM WITHOUT CARICATURE</text><text x="765" y="808" fill="#89f8ff">CADENCE / FRACTURE / PAUSE / RETURN</text></g>
+<g stroke="#fff" stroke-opacity=".16"><path d="M70 710H1130"/><path d="M70 730H1130"/><path d="M70 750H1130"/></g>
+</svg>
