@@ -5,6 +5,7 @@
   const timecode = document.querySelector('#timecode');
   const subtitle = document.querySelector('#subtitle');
   const beats = [...document.querySelectorAll('.beat')];
+  const memoryPanels = [...document.querySelectorAll('.memory-panel')];
 
   const DURATION = 32;
   const clamp = (value, min = 0, max = 1) => Math.min(Math.max(value, min), max);
@@ -103,6 +104,31 @@
     root.style.setProperty('--bob', `${bob.toFixed(2)}px`);
     root.style.setProperty('--turn', `${lerp(0, 2.8, firstLook).toFixed(2)}deg`);
     root.style.setProperty('--twin-turn', `${lerp(-4.5, -1.5, firstLook).toFixed(2)}deg`);
+    root.style.setProperty('--door-beam', (door * 0.12).toFixed(4));
+    root.style.setProperty('--memory-line-opacity', (memory * 0.45).toFixed(4));
+    root.style.setProperty('--floor-light-opacity', (0.04 + memory * 0.10 + gold * 0.18).toFixed(4));
+    root.style.setProperty('--arm-left', `${(stepRight * 0.55).toFixed(2)}deg`);
+    root.style.setProperty('--arm-right', `${(stepLeft * 0.55).toFixed(2)}deg`);
+    root.style.setProperty('--source-shadow-scale', (0.65 + humanScale * 0.42).toFixed(4));
+    root.style.setProperty('--reflection-scale-x', (humanScale * 0.98).toFixed(4));
+    root.style.setProperty('--reflection-scale-y', (humanScale * -0.56).toFixed(4));
+    root.style.setProperty('--reflection-opacity', (reflection * 0.42 * (1 - rise)).toFixed(4));
+    root.style.setProperty('--twin-y', `${(795 - rise * 260).toFixed(2)}px`);
+    root.style.setProperty('--twin-scale', (0.12 + rise * 0.54).toFixed(4));
+    root.style.setProperty('--twin-opacity', clamp(rise * 1.35).toFixed(4));
+    root.style.setProperty('--aura-opacity', (rise * 0.28 + gold * 0.32).toFixed(4));
+    root.style.setProperty('--twin-shadow-scale', (0.20 + rise * 0.82).toFixed(4));
+    root.style.setProperty('--twin-shadow-opacity', (rise * 0.35).toFixed(4));
+    root.style.setProperty('--final-axis-opacity', (final * 0.55).toFixed(4));
+    root.style.setProperty('--cue-opacity', clamp(1 - current * 3).toFixed(4));
+
+    memoryPanels.forEach((panel, index) => {
+      const panelProgress = clamp(memory * 7 - index);
+      const offset = (1 - panelProgress) * (index % 2 ? -18 : 22);
+      panel.style.setProperty('--panel', panelProgress.toFixed(4));
+      const rect = panel.querySelector('rect');
+      if (rect) rect.style.transform = `translateY(${offset.toFixed(2)}px)`;
+    });
 
     timecode.textContent = formatTime(time);
     activeBeat(time);
