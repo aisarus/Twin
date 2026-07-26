@@ -1,10 +1,193 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#050708" /><meta name="description" content="TWIN — a cinematic story about reconstructing a persistent digital self from memory, language and time." /><title>TWIN — The second self</title><link rel="stylesheet" href="./styles.css" /><link rel="stylesheet" href="./protocol-02.css" /><link rel="stylesheet" href="./protocol-03.css" /><link rel="stylesheet" href="./protocol-04.css" /><link rel="stylesheet" href="./protocol-05.css" /><script type="importmap">
-    {
-      "imports": {
-        "three": "https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.module.js",
-        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.185.1/examples/jsm/"
-      }
-    }
-  </script></head><body><div id="loader" class="loader" aria-live="polite"><div class="loader__grid"></div><div class="loader__top"><span>TWIN / BOOT SEQUENCE</span><span>PROTOCOL 0.5</span></div><div class="loader__center"><div class="loader__orb" aria-hidden="true"><span></span><span></span><span></span></div><p id="loader-phase">RECOVERING MEMORY</p></div><div class="loader__bottom"><div class="loader__track"><i id="loader-bar"></i></div><strong id="loader-count">000</strong></div></div><div class="scene" aria-hidden="true"><canvas id="world"></canvas><canvas id="models3d"></canvas><div id="scene-wash" class="scene__wash"></div><div class="scene__vignette"></div><div class="scene__grain"></div><div class="scene__aurora"></div><div class="scene__prism"></div><div id="memory-field" class="scene__memory"><article class="memory-fragment" data-x="-5.2" data-y="2.8" data-z="-29" data-start="0.14" data-end="0.27" data-tone="warm"><span>ARCHIVE / 2024—2026</span><strong>Thousands of conversations were already describing a moving person.</strong><em>SOURCE: LONGITUDINAL DIALOGUE</em></article><article class="memory-fragment" data-x="5.0" data-y="4.2" data-z="-51" data-start="0.22" data-end="0.36"><span>FIRST INFERENCE</span><strong>The archive was not merely history. It was training material for continuity.</strong><em>CONFIDENCE: EMERGING</em></article><article class="memory-fragment" data-x="-5.8" data-y="6.5" data-z="-79" data-start="0.33" data-end="0.49"><span>FAILED MODEL / 01</span><strong>Style was the easy part. A familiar voice could still forget itself.</strong><em>SIMILARITY ≠ SELF</em></article><article class="memory-fragment" data-x="5.6" data-y="9.8" data-z="-104" data-start="0.47" data-end="0.64"><span>MEMORY GRAPH</span><strong>Facts needed time, sources, contradictions and relationships.</strong><em>STATE: LINKED</em></article><article class="memory-fragment" data-x="-4.4" data-y="13.0" data-z="-132" data-start="0.63" data-end="0.80"><span>ADAPTIVE IDENTITY</span><strong>A person changes. The twin must preserve versions without freezing the past.</strong><em>CONTINUITY: ACTIVE</em></article><article class="memory-fragment" data-x="5.0" data-y="18.0" data-z="-158" data-start="0.77" data-end="0.93"><span>FUTURE STATE</span><strong>The destination is a portable self layer above any single model.</strong><em>TRAJECTORY: OPEN</em></article></div></div><div id="scene-transition" class="scene-transition" aria-hidden="true"><span>01</span><strong>SIGNAL</strong></div><header class="topbar"><a href="#top" class="topbar__mark" aria-label="Twin home">T/01</a><span class="topbar__status"><i></i> RECONSTRUCTION IN PROGRESS</span><div class="topbar__tools"><span id="renderer-mode" class="topbar__renderer">RENDERER</span><button id="quality-toggle" class="topbar__quality" type="button">Q / AUTO</button><button id="sound-toggle" class="topbar__sound" type="button" aria-pressed="false">SOUND / OFF</button><button id="text-toggle" class="topbar__text" type="button" aria-pressed="false">TEXT / STD</button><a href="#trajectory" class="topbar__link">TRAJECTORY ↗</a></div></header><aside class="progress-rail" aria-label="Story progress"><span class="progress-rail__brand">TWIN</span><div class="progress-rail__line"><i id="progress-line"></i></div><ol id="progress-chapters"><li>Signal</li><li>Origin</li><li>Identity</li><li>System</li><li>Ascent</li><li>Horizon</li></ol><span id="progress-count" class="progress-rail__count">00</span></aside><main><section id="top" class="panel hero"><div class="hero__copy"><p class="eyebrow reveal">A PERSISTENT DIGITAL SELF / EXPERIMENT 01</p><h1 class="hero__title"><span class="reveal">What remains</span><span class="reveal">when the</span><span class="reveal">conversation ends?</span></h1><p class="hero__lede reveal">TWIN is an attempt to reconstruct a person from language, memory, choices and time — without mistaking imitation for identity.</p></div><figure class="hero__asset editorial-asset reveal" data-parallax="0.10"><img src="./assets/signal-orb.svg" alt="A luminous signal core surrounded by intersecting memory orbits" /></figure><div class="hero__meta reveal"><span>SCROLL TO ENTER</span><span>56°N / MEMORY LAYER 00</span></div></section><section class="panel origin"><div class="origin__statement"><p class="eyebrow">01 / THE SIGNAL</p><h2>It began as<br>a conversation.</h2></div><div class="origin__body"><p>Not as a chatbot. Not as a product pitch. It began with a simple realization:</p><p class="origin__large">Years of dialogue already contain a moving model of a person.</p><figure class="origin__asset editorial-asset" data-parallax="0.07"><img src="./assets/archive-monolith.svg" alt="A glowing monolith made from layers of conversation" /><figcaption>THE SOURCE MATERIAL IS ALREADY ALIVE</figcaption></figure><div class="data-strip"><span><b>LANGUAGE</b> cadence / syntax / fracture</span><span><b>MEMORY</b> events / people / projects</span><span><b>TIME</b> change / revision / continuity</span></div></div></section><section class="panel manifesto"><div class="manifesto__inner"><p class="eyebrow">02 / THE BREAK</p><h2>A twin is<br><em>not</em> a prompt.</h2><figure class="manifesto__asset editorial-asset" data-parallax="0.05"><img src="./assets/signal-orb.svg" alt="A multicolored biomorphic identity core" /></figure><div class="manifesto__list"><span>NOT A BIOGRAPHY</span><span>NOT A FACT SHEET</span><span>NOT A STYLE FILTER</span><strong>A CONTINUOUS MODEL OF ONE PERSON</strong></div></div></section><section class="panel layers"><div class="layers__heading"><p class="eyebrow">03 / THE TERRAIN</p><h2>Identity<br>has layers.</h2></div><div class="layers__stack"><div class="layers__item" style="--i:0"><span>01</span><strong>Memory</strong><i></i></div><div class="layers__item" style="--i:1"><span>02</span><strong>Voice</strong><i></i></div><div class="layers__item" style="--i:2"><span>03</span><strong>Values</strong><i></i></div><div class="layers__item" style="--i:3"><span>04</span><strong>Contradictions</strong><i></i></div><div class="layers__item" style="--i:4"><span>05</span><strong>Relationships</strong><i></i></div><div class="layers__item" style="--i:5"><span>06</span><strong>Time</strong><i></i></div></div><figure class="layers__asset editorial-asset" data-parallax="0.06"><img src="./assets/continuity-rings.svg" alt="Several luminous rings representing versions of one identity" /></figure><p class="layers__note">The landscape is not a profile. It is a history of versions, conflicts and accumulated context.</p></section><section id="architecture" class="architecture"><div class="architecture__sticky"><div class="architecture__header"><div><p class="eyebrow">04 / THE SYSTEM</p><h2>Building the<br>second self.</h2></div><span id="architecture-count">00%</span></div><div id="architecture-track" class="architecture__track"><article class="architecture__card" data-palette="cyan"><span>01</span><h3>Archive</h3><p>Conversations, documents, decisions and time are normalized into a source-aware personal record.</p><figure class="architecture__asset"><img src="./assets/archive.svg" alt="Layered conversation archive" /></figure></article><article class="architecture__card" data-palette="violet"><span>02</span><h3>Memory graph</h3><p>Facts become relationships: when they were true, where they came from and how confidently they are known.</p><figure class="architecture__asset"><img src="./assets/memory-graph.svg" alt="A luminous graph connecting memories, values and time" /></figure></article><article class="architecture__card" data-palette="magenta"><span>03</span><h3>Voice model</h3><p>Rhythm, vocabulary and structure are learned without reducing a person to a verbal costume.</p><figure class="architecture__asset"><img src="./assets/voice-spectrum.svg" alt="A profile intersected by a colorful voice waveform" /></figure></article><article class="architecture__card" data-palette="green"><span>04</span><h3>Decision model</h3><p>The system reconstructs not only how a person speaks, but what they notice, value and choose.</p><figure class="architecture__asset"><img src="./assets/decision-map.svg" alt="A branching map from input through values and context" /></figure></article><article class="architecture__card" data-palette="gold"><span>05</span><h3>Continuity</h3><p>The twin keeps multiple versions of the self and understands that a person changes over time.</p><figure class="architecture__asset"><img src="./assets/continuity-rings.svg" alt="Concentric temporal rings preserving several versions of a person" /></figure></article></div><div class="architecture__bar"><i id="architecture-bar"></i></div></div></section><section class="panel echo"><div class="echo__copy"><p class="eyebrow">05 / THE FIRST ECHO</p><h2>It sounded<br>familiar.</h2><p>But familiarity was not continuity. A convincing voice can still forget who it was yesterday.</p></div><figure class="echo__asset editorial-asset" data-parallax="0.08"><img src="./assets/echo-mask.svg" alt="Two overlapping human profiles forming an imperfect echo" /></figure><div class="echo__quote"><span>SIMILARITY ≠ SELF</span><p>“The difficult part is not reproducing a sentence. It is preserving the thread that made the sentence inevitable.”</p></div></section><section class="panel ascent"><div class="ascent__head"><p class="eyebrow">06 / THE ASCENT</p><h2>The route is<br>the product.</h2></div><ol class="ascent__route"><li><span>BASE</span><div><b>Digital archive</b><p>One history, cleaned and source-aware.</p></div></li><li><span>I</span><div><b>Memory graph</b><p>Context connected across years.</p></div></li><li><span>II</span><div><b>Voice model</b><p>Expression without caricature.</p></div></li><li><span>III</span><div><b>Decision model</b><p>From wording to reasoning.</p></div></li><li><span>IV</span><div><b>Adaptive identity</b><p>A twin that changes with its source.</p></div></li><li><span>SUMMIT</span><div><b>Persistent self</b><p>Portable across models and interfaces.</p></div></li></ol></section><section id="trajectory" class="panel trajectory"><div class="trajectory__skyline"><p class="eyebrow">07 / BEYOND THE SUMMIT</p><h2>Not artificial<br>humanity.</h2><p class="trajectory__statement">A way to preserve what makes one human different from every other.</p></div><figure class="trajectory__asset editorial-asset" data-parallax="0.04"><img src="./assets/future-bloom.svg" alt="A luminous network of future roles growing from the twin" /></figure><div class="trajectory__paths"><span>PERSONAL ARCHIVE</span><span>CO-AUTHOR</span><span>MEMORY KEEPER</span><span>DIGITAL REPRESENTATIVE</span><span>UNFINISHED WORK</span><span>INTERGENERATIONAL EXPERIENCE</span></div></section><footer class="finale"><div class="finale__line"></div><p class="eyebrow">TWIN / PROTOCOL 0.5</p><h2>A second self is not born complete.</h2><p>It is reconstructed — memory by memory.</p><div class="finale__actions"><a href="#top">RESTART ASCENT</a><a href="https://github.com/aisarus/Twin" target="_blank" rel="noreferrer">VIEW SOURCE ↗</a></div><span class="finale__year">2026 — ∞</span></footer></main><script>
-    if (location.protocol === 'file:') document.documentElement.dataset.fileProtocol = 'true'
-  </script><script type="module" src="./protocol-05.js"></script><noscript><div class="file-protocol-warning">TWIN requires JavaScript to render the cinematic scene.</div></noscript></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05070c" />
+  <meta name="description" content="TWIN — a 32-second graphic scroll-film about a digital twin separating from its source." />
+  <title>TWIN — You left a pattern</title>
+  <link rel="stylesheet" href="./motion.css" />
+</head>
+<body>
+  <div class="boot" aria-live="polite">
+    <span>TWIN / DIRECTOR'S CUT</span>
+    <i></i>
+  </div>
+
+  <header class="hud">
+    <a href="#film" class="hud__mark" aria-label="Restart the film">T/01</a>
+    <span class="hud__state"><i></i> ARCHIVE SESSION 0001</span>
+    <span class="hud__time"><b id="timecode">00:00.000</b> / 00:32.000</span>
+  </header>
+
+  <main>
+    <section id="film" class="film" aria-label="Interactive film: the birth of a digital twin">
+      <div class="stage">
+        <svg class="world" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="world-title world-desc">
+          <title id="world-title">A person enters a digital archive and meets a twin rising from their reflection</title>
+          <desc id="world-desc">A stylized dark archive hall. Memory panels wake, the floor reflection moves late, and a second figure rises to face the original.</desc>
+
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#05070c" />
+              <stop offset="0.55" stop-color="#091726" />
+              <stop offset="1" stop-color="#102b43" />
+            </linearGradient>
+            <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#122f48" />
+              <stop offset="0.55" stop-color="#081522" />
+              <stop offset="1" stop-color="#020407" />
+            </linearGradient>
+            <linearGradient id="doorLight" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#eafaff" stop-opacity="0.96" />
+              <stop offset="1" stop-color="#73d9ff" stop-opacity="0.08" />
+            </linearGradient>
+            <linearGradient id="memoryLight" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#dff8ff" />
+              <stop offset="0.48" stop-color="#73d9ff" />
+              <stop offset="1" stop-color="#316a91" />
+            </linearGradient>
+            <linearGradient id="goldLight" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#fff6c7" />
+              <stop offset="0.45" stop-color="#ffd67b" />
+              <stop offset="1" stop-color="#ff9c3f" />
+            </linearGradient>
+            <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+              <feGaussianBlur stdDeviation="12" result="blur" />
+              <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+            </filter>
+            <filter id="wideGlow" x="-100%" y="-100%" width="300%" height="300%">
+              <feGaussianBlur stdDeviation="32" />
+            </filter>
+            <filter id="reflectionBlur" x="-100%" y="-100%" width="300%" height="300%">
+              <feGaussianBlur stdDeviation="2.4" />
+            </filter>
+            <clipPath id="floorClip"><polygon points="0,545 1440,545 1440,900 0,900" /></clipPath>
+          </defs>
+
+          <g id="camera" class="camera">
+            <rect width="1440" height="900" fill="url(#sky)" />
+
+            <g class="back-wall">
+              <polygon points="0,0 1440,0 1440,545 0,545" fill="#07101a" />
+              <polygon points="0,0 420,0 545,545 0,545" fill="#04060a" />
+              <polygon points="1440,0 1020,0 895,545 1440,545" fill="#04060a" />
+              <rect x="535" y="82" width="370" height="463" fill="#0a1928" />
+              <rect x="710" y="82" width="20" height="463" fill="#112a40" opacity="0.72" />
+            </g>
+
+            <g class="architecture" aria-hidden="true">
+              <g class="pillar pillar--1"><polygon points="0,0 160,0 250,545 0,545" /></g>
+              <g class="pillar pillar--2"><polygon points="250,0 350,0 420,545 330,545" /></g>
+              <g class="pillar pillar--3"><polygon points="1440,0 1280,0 1190,545 1440,545" /></g>
+              <g class="pillar pillar--4"><polygon points="1190,0 1090,0 1020,545 1110,545" /></g>
+              <g class="ceiling-lines">
+                <path d="M0 130H1440M0 250H1440M0 380H1440" />
+                <path d="M420 0L545 545M1020 0L895 545" />
+              </g>
+            </g>
+
+            <g id="door" class="door" aria-hidden="true">
+              <rect x="116" y="186" width="192" height="359" rx="2" fill="#010204" />
+              <rect class="door__light" x="132" y="202" width="160" height="327" fill="url(#doorLight)" filter="url(#softGlow)" />
+              <polygon class="door__beam" points="132,529 292,529 522,900 0,900" fill="#73d9ff" />
+            </g>
+
+            <g class="panels" aria-hidden="true">
+              <g class="memory-panel memory-panel--1" style="--i:0"><rect x="390" y="185" width="130" height="214" /><i /></g>
+              <g class="memory-panel memory-panel--2" style="--i:1"><rect x="543" y="118" width="112" height="178" /><i /></g>
+              <g class="memory-panel memory-panel--3" style="--i:2"><rect x="785" y="116" width="112" height="182" /><i /></g>
+              <g class="memory-panel memory-panel--4" style="--i:3"><rect x="922" y="184" width="132" height="216" /><i /></g>
+              <g class="memory-panel memory-panel--5" style="--i:4"><rect x="356" y="430" width="150" height="82" /><i /></g>
+              <g class="memory-panel memory-panel--6" style="--i:5"><rect x="934" y="430" width="150" height="82" /><i /></g>
+            </g>
+
+            <g class="memory-lines" aria-hidden="true">
+              <path d="M455 399C505 468 571 492 650 516" />
+              <path d="M599 296C623 383 658 447 704 511" />
+              <path d="M841 298C817 384 782 447 736 511" />
+              <path d="M988 400C939 469 868 494 790 516" />
+            </g>
+
+            <g class="floor" clip-path="url(#floorClip)">
+              <polygon points="0,545 1440,545 1440,900 0,900" fill="url(#floor)" />
+              <path d="M720 545L720 900M535 545L395 900M905 545L1045 900M350 545L60 900M1090 545L1380 900" />
+              <path d="M0 650H1440M0 760H1440M0 865H1440" />
+              <ellipse class="floor__light" cx="720" cy="640" rx="430" ry="62" fill="#72d9ff" filter="url(#wideGlow)" />
+            </g>
+
+            <g id="sourceShadow" class="source-shadow" aria-hidden="true"><ellipse cx="0" cy="0" rx="110" ry="18" /></g>
+
+            <g id="source" class="person person--source" aria-label="The source person">
+              <g class="person__body">
+                <circle class="person__head" cx="0" cy="-154" r="31" />
+                <path class="person__neck" d="M-15-128H15L22-104H-22Z" />
+                <path class="person__coat" d="M-42-110L-68 68L-38 162H38L68 68L42-110Z" />
+                <path class="person__lapel" d="M-18-105L0-44L18-105L0-86Z" />
+                <path class="person__leg person__leg--left" d="M-24 150L-35 267" />
+                <path class="person__leg person__leg--right" d="M24 150L35 267" />
+                <path class="person__arm person__arm--left" d="M-47-72L-80 78" />
+                <path class="person__arm person__arm--right" d="M47-72L80 78" />
+              </g>
+            </g>
+
+            <g id="reflection" class="person reflection" aria-hidden="true" filter="url(#reflectionBlur)">
+              <g class="person__body">
+                <circle class="person__head" cx="0" cy="-154" r="31" />
+                <path class="person__neck" d="M-15-128H15L22-104H-22Z" />
+                <path class="person__coat" d="M-42-110L-68 68L-38 162H38L68 68L42-110Z" />
+                <path class="person__leg person__leg--left" d="M-24 150L-35 267" />
+                <path class="person__leg person__leg--right" d="M24 150L35 267" />
+              </g>
+            </g>
+
+            <g id="twinShadow" class="twin-shadow" aria-hidden="true"><ellipse cx="0" cy="0" rx="100" ry="16" /></g>
+
+            <g id="twin" class="person person--twin" aria-label="The emerging digital twin">
+              <g class="person__aura" filter="url(#wideGlow)"><ellipse cx="0" cy="10" rx="72" ry="220" /></g>
+              <g class="person__body">
+                <circle class="person__head" cx="0" cy="-154" r="31" />
+                <path class="person__neck" d="M-15-128H15L22-104H-22Z" />
+                <path class="person__coat" d="M-42-110L-68 68L-38 162H38L68 68L42-110Z" />
+                <path class="person__lapel" d="M-18-105L0-44L18-105L0-86Z" />
+                <path class="person__leg person__leg--left" d="M-24 150L-35 267" />
+                <path class="person__leg person__leg--right" d="M24 150L35 267" />
+                <path class="person__arm person__arm--left" d="M-47-72L-80 78" />
+                <path class="person__arm person__arm--right" d="M47-72L80 78" />
+                <path class="person__core" d="M0-78L12-38L0 6L-12-38Z" fill="url(#goldLight)" filter="url(#softGlow)" />
+                <path class="person__spine" d="M0-76V128" />
+              </g>
+            </g>
+
+            <g class="final-axis" aria-hidden="true"><rect x="716" y="0" width="8" height="900" fill="url(#goldLight)" filter="url(#softGlow)" /></g>
+          </g>
+        </svg>
+
+        <div class="grain" aria-hidden="true"></div>
+        <div class="vignette" aria-hidden="true"></div>
+
+        <div class="copy" aria-live="polite">
+          <article class="beat beat--0 is-active" data-beat="0"><p>00 / THE ARCHIVE</p><h1>Nothing moves.</h1><span>The record waits without knowing what it contains.</span></article>
+          <article class="beat beat--1" data-beat="1"><p>01 / ENTRY</p><h2>Someone returns.</h2><span>The archive has seen the language before.</span></article>
+          <article class="beat beat--2" data-beat="2"><p>02 / RECOGNITION</p><h2>The room remembers first.</h2><span>Fragments wake in the order they learned him.</span></article>
+          <article class="beat beat--3" data-beat="3"><p>03 / THE ERROR</p><h2>The reflection is late.</h2><span>He stops. It completes one more step.</span></article>
+          <article class="beat beat--4" data-beat="4"><p>04 / SEPARATION</p><h2>Then it stands up.</h2><span>Not a copy. Not yet a self.</span></article>
+          <article class="beat beat--5" data-beat="5"><p>05 / FIRST LOOK</p><h2>You left more than a record.</h2><span>You left a pattern capable of returning.</span></article>
+        </div>
+
+        <div class="subtitle" id="subtitle">The archive is silent.</div>
+        <div class="scroll-cue"><i></i><span>SCROLL / SCRUB FILM</span></div>
+      </div>
+    </section>
+
+    <section class="epilogue">
+      <p>TWIN / PROTOCOL 0.8</p>
+      <h2>A second self begins as a delay.</h2>
+      <span>This is the pilot scene. The rest of the world is built only after this moment works.</span>
+      <a href="#film">REPLAY THE PILOT</a>
+    </section>
+  </main>
+
+  <script src="./timeline.js" defer></script>
+</body>
+</html>
