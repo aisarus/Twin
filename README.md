@@ -1,58 +1,71 @@
 # TWIN — cinematic digital twin story
 
-A cinematic scroll narrative about the origin, architecture and future trajectory of a persistent digital self.
+TWIN is a no-build interactive manifesto about reconstructing a persistent digital self from language, memory, decisions and time.
 
-## Open on Windows
+## Active version: Protocol 0.5
 
-1. Extract the archive.
-2. Double-click `OPEN_TWIN.bat`.
-3. The site opens at `http://localhost:4173`.
+Protocol 0.5 is the first production-oriented pass:
 
-Do not open `index.html` directly through `file://`: browser module security will stop the cinematic renderer. Protocol 0.4 now displays an explicit warning when that happens.
+- readable microcopy by default, with an optional `TEXT / MAX` mode
+- Vercel-ready static deployment from the repository root
+- a pinned Three.js narrative layer loaded through an import map
+- six real-time 3D scenes made from meshes rather than flat illustrations
+- a signal core, archive monolith, memory graph, voice relic, twin gate and future bloom
+- ACES tone mapping, physical materials, moving lights and shadow maps
+- soft receiving shadows under every major 3D object
+- chapter-driven model transitions synchronized with the existing scroll story
+- the previous procedural WebGL landscape and Canvas fallback remain intact
+- graceful fallback when the external Three.js module cannot load
 
-## Protocol 0.4 — visual direction and content assets
+## Run locally
 
-This pass replaces the empty black technical-demo feeling with chapter-specific visual art direction.
+### Windows
 
-- six smoothly interpolated chapter palettes
-- saturated chapter color grading layered over the existing WebGL terrain, clouds and summit lighting
-- authored SVG asset system with no external image dependency
-- signal core hero artwork
-- conversation archive monolith
-- memory graph constellation
-- voice-spectrum portrait
-- decision-path diagram
-- continuity rings
-- first-echo double portrait
-- future-trajectory bloom
-- asset-driven architecture cards
-- editorial parallax and chapter color transitions
-- colored Canvas fallback for devices without WebGL
-- one-click Windows launcher
+Double-click `OPEN_TWIN.bat`.
 
-## Previous protocols
+### macOS / Linux
 
-- Protocol 0.1 — narrative and interaction foundation
-- Protocol 0.2 — native WebGL raymarched world
-- Protocol 0.3 — authored camera flight, summit monument, spatial memories and optional sound
+```bash
+python3 -m http.server 4173
+```
 
-Older renderers remain in the repository for comparison and rollback.
+Then open `http://localhost:4173`.
 
-## Architecture
+Do not open `index.html` directly through `file://` because browser module security will block the cinematic JavaScript.
 
-- `index.html` — story structure and asset placement
-- `styles.css` — foundational editorial layout
-- `protocol-02.css`, `protocol-03.css`, `protocol-04.css` — progressive visual layers
-- `protocol-04.js` — active scroll choreography, chapter states, parallax, sound and renderer controls
-- `webgl-world-03.js` — active GPU terrain, atmosphere and summit monument
-- `fallback-world.js` — Canvas fallback
-- `camera-path.js` — authored camera spline
-- `soundscape.js` — optional procedural Web Audio atmosphere
-- `assets/` — content-specific vector artwork
+## Deploy to Vercel
+
+The site is static and requires no build command.
+
+1. Import `aisarus/Twin` in Vercel.
+2. Use the **Other** framework preset.
+3. Leave Build Command and Output Directory empty.
+4. Select `agent/cinematic-foundation` for the preview deployment.
+5. Merge the pull request only after visual review; `main` can then become the production branch.
+
+See `DEPLOY_VERCEL.md` for the exact settings. `vercel.json` provides clean URLs, security headers and long-lived caching for local assets.
+
+## Active files
+
+- `index.html` — story structure, import map and renderer canvases
+- `protocol-05.css` — readability and production visual overrides
+- `protocol-05.js` — Three.js bootstrapping, text controls and production scroll sync
+- `three-stage.js` — real-time 3D models, lighting, materials and shadows
+- `protocol-04.js` + `webgl-world-04.js` — existing scroll choreography and procedural world
+- `fallback-world-04.js` — Canvas fallback
+- `assets/` — local editorial illustrations
+- `vercel.json` — deployment configuration
 
 ## Validation
 
-- all JavaScript modules pass `node --check`
-- every local HTML asset reference resolves
-- all nine SVG assets render successfully through ImageMagick/Inkscape
-- the available containerized Chromium still cannot initialize GPU/EGL, so final WebGL visual review must happen in a normal desktop browser
+```bash
+node --check protocol-05.js
+node --check three-stage.js
+python -m json.tool vercel.json
+```
+
+The container used to produce this pass cannot initialize a trustworthy GPU/EGL browser session and cannot reach the external Three.js CDN. The new stage therefore still needs a normal-browser visual pass after deployment. Failure to load the Three.js layer does not block Protocol 0.4 or its Canvas fallback.
+
+## Next trajectory
+
+Protocol 0.6 should replace selected procedural meshes with authored `.glb` assets, use baked normal/roughness maps, add contact-shadow tuning per device, and integrate genuine project material such as archive excerpts, pipeline diagrams, measured data and interface captures.
