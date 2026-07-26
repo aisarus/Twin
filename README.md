@@ -1,6 +1,6 @@
 # TWIN — cinematic digital twin story
 
-An autonomous, no-build cinematic prototype about the origin, architecture and future trajectory of a persistent digital self.
+A cinematic scroll narrative about the origin, architecture and future trajectory of a persistent digital self.
 
 ## Open locally
 
@@ -14,23 +14,44 @@ Then open `http://localhost:4173`.
 
 No npm install or build step is required.
 
-## What is implemented
+## Protocol 0.2
+
+The visual world now runs through a native WebGL 2 renderer rather than a painted pseudo-3D canvas.
+
+Implemented in this pass:
+
+- full-screen fragment-shader raymarcher
+- procedural identity mountain range with erosion and strata
+- scroll-driven 3D camera flight
+- animated low, middle and high cloud layers
+- atmospheric depth fog and summit lighting
+- shader-based morphing memory core
+- GPU memory particles and horizon beacon
+- automatic low / medium / high quality selection
+- adaptive quality downgrade when frame time is too high
+- manual quality control in the top navigation
+- WebGL context-loss handling
+- automatic Canvas 2D fallback for unsupported devices
+
+## Story layer
 
 - cinematic boot / initialization sequence
-- native Canvas pseudo-3D renderer with no external runtime dependencies
-- scroll-driven camera path through a procedural identity landscape
-- morphing memory core and particle field
-- warm editorial manifesto scene inspired by the product reference
-- horizontal scroll architecture sequence
-- ascent roadmap and future trajectory
-- responsive layout and reduced-motion fallback
+- origin and manifesto chapters
+- identity terrain
+- horizontal architecture sequence
+- first echo, ascent roadmap and future trajectory
+- responsive layout and reduced-motion support
 
 ## Architecture
 
 - `index.html` — semantic story structure
 - `styles.css` — editorial layout, transitions and responsive presentation
-- `main.js` — loader, scroll direction, procedural terrain, particles and camera renderer
+- `protocol-02.js` — active loader, scroll choreography, chapter state and renderer controls
+- `webgl-world.js` — WebGL program, shader world, camera and adaptive quality
+- `fallback-world.js` — dependency-free Canvas renderer for unsupported devices
+- `main.js` — preserved Protocol 0.1 renderer for comparison and rollback
+- `protocol-02.css` — renderer instrumentation and quality controls
 
-## Production trajectory
+## Next production pass
 
-This commit establishes the narrative direction and interaction grammar. The next pass can replace the native Canvas renderer with authored WebGL assets (Three.js, Blender terrain, volumetric clouds and post-processing) after the storyboard and copy are approved.
+Protocol 0.3 should introduce authored scene assets and stronger narrative choreography: a custom Blender summit silhouette, text fragments embedded into the terrain, scene-specific camera splines and sound design that remains optional and user-controlled.
