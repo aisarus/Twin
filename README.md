@@ -24,14 +24,14 @@ Implemented in this pass:
 - procedural identity mountain range with erosion and strata
 - scroll-driven 3D camera flight
 - animated low, middle and high cloud layers
-- atmospheric depth fog and summit lighting
+- ray-integrated valley mist, atmospheric depth fog and summit lighting
 - shader-based morphing memory core
 - GPU memory particles and horizon beacon
 - automatic low / medium / high quality selection
 - adaptive quality downgrade when frame time is too high
 - manual quality control in the top navigation
 - WebGL context-loss handling
-- automatic Canvas 2D fallback for unsupported devices
+- automatic Canvas 2D fallback for unsupported devices or failed shader initialization
 
 ## Story layer
 
@@ -51,6 +51,12 @@ Implemented in this pass:
 - `fallback-world.js` — dependency-free Canvas renderer for unsupported devices
 - `main.js` — preserved Protocol 0.1 renderer for comparison and rollback
 - `protocol-02.css` — renderer instrumentation and quality controls
+
+## Validation
+
+- all JavaScript modules pass `node --check`
+- repository wiring and module paths were verified after publication
+- the available headless Chromium environment cannot initialize GPU/EGL, so a visual WebGL pass still needs to be performed in a normal desktop browser; unsupported environments automatically enter the Canvas fallback
 
 ## Next production pass
 
