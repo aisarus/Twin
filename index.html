@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050708" />
+  <meta name="description" content="TWIN — a cinematic story about reconstructing a persistent digital self from memory, language and time." />
+  <title>TWIN — The second self</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="loader" class="loader" aria-live="polite">
+    <div class="loader__grid"></div>
+    <div class="loader__top"><span>TWIN / BOOT SEQUENCE</span><span>PROTOCOL 0.1</span></div>
+    <div class="loader__center">
+      <div class="loader__orb" aria-hidden="true"><span></span><span></span><span></span></div>
+      <p id="loader-phase">RECOVERING MEMORY</p>
+    </div>
+    <div class="loader__bottom">
+      <div class="loader__track"><i id="loader-bar"></i></div>
+      <strong id="loader-count">000</strong>
+    </div>
+  </div>
+
+  <div class="scene" aria-hidden="true">
+    <canvas id="world"></canvas>
+    <div id="scene-wash" class="scene__wash"></div>
+    <div class="scene__vignette"></div>
+    <div class="scene__grain"></div>
+  </div>
+
+  <header class="topbar">
+    <a href="#top" class="topbar__mark" aria-label="Twin home">T/01</a>
+    <span class="topbar__status"><i></i> RECONSTRUCTION IN PROGRESS</span>
+    <a href="#trajectory" class="topbar__link">TRAJECTORY ↗</a>
+  </header>
+
+  <aside class="progress-rail" aria-label="Story progress">
+    <span class="progress-rail__brand">TWIN</span>
+    <div class="progress-rail__line"><i id="progress-line"></i></div>
+    <ol id="progress-chapters">
+      <li>Signal</li><li>Origin</li><li>Identity</li><li>System</li><li>Ascent</li><li>Horizon</li>
+    </ol>
+    <span id="progress-count" class="progress-rail__count">00</span>
+  </aside>
+
+  <main>
+    <section id="top" class="panel hero">
+      <div class="hero__copy">
+        <p class="eyebrow reveal">A PERSISTENT DIGITAL SELF / EXPERIMENT 01</p>
+        <h1 class="hero__title">
+          <span class="reveal">What remains</span>
+          <span class="reveal">when the</span>
+          <span class="reveal">conversation ends?</span>
+        </h1>
+        <p class="hero__lede reveal">TWIN is an attempt to reconstruct a person from language, memory, choices and time — without mistaking imitation for identity.</p>
+      </div>
+      <div class="hero__meta reveal"><span>SCROLL TO ENTER</span><span>56°N / MEMORY LAYER 00</span></div>
+    </section>
+
+    <section class="panel origin">
+      <div class="origin__statement">
+        <p class="eyebrow">01 / THE SIGNAL</p>
+        <h2>It began as<br>a conversation.</h2>
+      </div>
+      <div class="origin__body">
+        <p>Not as a chatbot. Not as a product pitch. It began with a simple realization:</p>
+        <p class="origin__large">Years of dialogue already contain a moving model of a person.</p>
+        <div class="data-strip">
+          <span><b>LANGUAGE</b> cadence / syntax / fracture</span>
+          <span><b>MEMORY</b> events / people / projects</span>
+          <span><b>TIME</b> change / revision / continuity</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel manifesto">
+      <div class="manifesto__inner">
+        <p class="eyebrow">02 / THE BREAK</p>
+        <h2>A twin is<br><em>not</em> a prompt.</h2>
+        <div class="manifesto__list">
+          <span>NOT A BIOGRAPHY</span><span>NOT A FACT SHEET</span><span>NOT A STYLE FILTER</span><strong>A CONTINUOUS MODEL OF ONE PERSON</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel layers">
+      <div class="layers__heading">
+        <p class="eyebrow">03 / THE TERRAIN</p>
+        <h2>Identity<br>has layers.</h2>
+      </div>
+      <div class="layers__stack">
+        <div class="layers__item" style="--i:0"><span>01</span><strong>Memory</strong><i></i></div>
+        <div class="layers__item" style="--i:1"><span>02</span><strong>Voice</strong><i></i></div>
+        <div class="layers__item" style="--i:2"><span>03</span><strong>Values</strong><i></i></div>
+        <div class="layers__item" style="--i:3"><span>04</span><strong>Contradictions</strong><i></i></div>
+        <div class="layers__item" style="--i:4"><span>05</span><strong>Relationships</strong><i></i></div>
+        <div class="layers__item" style="--i:5"><span>06</span><strong>Time</strong><i></i></div>
+      </div>
+      <p class="layers__note">The landscape is not a profile. It is a history of versions, conflicts and accumulated context.</p>
+    </section>
+
+    <section id="architecture" class="architecture">
+      <div class="architecture__sticky">
+        <div class="architecture__header">
+          <div><p class="eyebrow">04 / THE SYSTEM</p><h2>Building the<br>second self.</h2></div>
+          <span id="architecture-count">00%</span>
+        </div>
+        <div id="architecture-track" class="architecture__track">
+          <article class="architecture__card"><span>01</span><h3>Archive</h3><p>Conversations, documents, decisions and time are normalized into a source-aware personal record.</p><div class="architecture__diagram"><i></i><i></i><i></i><i></i></div></article>
+          <article class="architecture__card"><span>02</span><h3>Memory graph</h3><p>Facts become relationships: when they were true, where they came from and how confidently they are known.</p><div class="architecture__diagram"><i></i><i></i><i></i><i></i></div></article>
+          <article class="architecture__card"><span>03</span><h3>Voice model</h3><p>Rhythm, vocabulary and structure are learned without reducing a person to a verbal costume.</p><div class="architecture__diagram"><i></i><i></i><i></i><i></i></div></article>
+          <article class="architecture__card"><span>04</span><h3>Decision model</h3><p>The system reconstructs not only how a person speaks, but what they notice, value and choose.</p><div class="architecture__diagram"><i></i><i></i><i></i><i></i></div></article>
+          <article class="architecture__card"><span>05</span><h3>Continuity</h3><p>The twin keeps multiple versions of the self and understands that a person changes over time.</p><div class="architecture__diagram"><i></i><i></i><i></i><i></i></div></article>
+        </div>
+        <div class="architecture__bar"><i id="architecture-bar"></i></div>
+      </div>
+    </section>
+
+    <section class="panel echo">
+      <div class="echo__copy">
+        <p class="eyebrow">05 / THE FIRST ECHO</p>
+        <h2>It sounded<br>familiar.</h2>
+        <p>But familiarity was not continuity. A convincing voice can still forget who it was yesterday.</p>
+      </div>
+      <div class="echo__quote">
+        <span>SIMILARITY ≠ SELF</span>
+        <p>“The difficult part is not reproducing a sentence. It is preserving the thread that made the sentence inevitable.”</p>
+      </div>
+    </section>
+
+    <section class="panel ascent">
+      <div class="ascent__head"><p class="eyebrow">06 / THE ASCENT</p><h2>The route is<br>the product.</h2></div>
+      <ol class="ascent__route">
+        <li><span>BASE</span><div><b>Digital archive</b><p>One history, cleaned and source-aware.</p></div></li>
+        <li><span>I</span><div><b>Memory graph</b><p>Context connected across years.</p></div></li>
+        <li><span>II</span><div><b>Voice model</b><p>Expression without caricature.</p></div></li>
+        <li><span>III</span><div><b>Decision model</b><p>From wording to reasoning.</p></div></li>
+        <li><span>IV</span><div><b>Adaptive identity</b><p>A twin that changes with its source.</p></div></li>
+        <li><span>SUMMIT</span><div><b>Persistent self</b><p>Portable across models and interfaces.</p></div></li>
+      </ol>
+    </section>
+
+    <section id="trajectory" class="panel trajectory">
+      <div class="trajectory__skyline">
+        <p class="eyebrow">07 / BEYOND THE SUMMIT</p>
+        <h2>Not artificial<br>humanity.</h2>
+        <p class="trajectory__statement">A way to preserve what makes one human different from every other.</p>
+      </div>
+      <div class="trajectory__paths">
+        <span>PERSONAL ARCHIVE</span><span>CO-AUTHOR</span><span>MEMORY KEEPER</span><span>DIGITAL REPRESENTATIVE</span><span>UNFINISHED WORK</span><span>INTERGENERATIONAL EXPERIENCE</span>
+      </div>
+    </section>
+
+    <footer class="finale">
+      <div class="finale__line"></div>
+      <p class="eyebrow">TWIN / PROTOCOL 0.1</p>
+      <h2>A second self is not born complete.</h2>
+      <p>It is reconstructed — memory by memory.</p>
+      <div class="finale__actions"><a href="#top">RESTART ASCENT</a><a href="https://github.com/aisarus/Twin" target="_blank" rel="noreferrer">VIEW SOURCE ↗</a></div>
+      <span class="finale__year">2026 — ∞</span>
+    </footer>
+  </main>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
