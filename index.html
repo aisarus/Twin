@@ -7,11 +7,12 @@
   <meta name="description" content="TWIN — a cinematic story about reconstructing a persistent digital self from memory, language and time." />
   <title>TWIN — The second self</title>
   <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./protocol-02.css" />
 </head>
 <body>
   <div id="loader" class="loader" aria-live="polite">
     <div class="loader__grid"></div>
-    <div class="loader__top"><span>TWIN / BOOT SEQUENCE</span><span>PROTOCOL 0.1</span></div>
+    <div class="loader__top"><span>TWIN / BOOT SEQUENCE</span><span>PROTOCOL 0.2</span></div>
     <div class="loader__center">
       <div class="loader__orb" aria-hidden="true"><span></span><span></span><span></span></div>
       <p id="loader-phase">RECOVERING MEMORY</p>
@@ -32,7 +33,7 @@
   <header class="topbar">
     <a href="#top" class="topbar__mark" aria-label="Twin home">T/01</a>
     <span class="topbar__status"><i></i> RECONSTRUCTION IN PROGRESS</span>
-    <a href="#trajectory" class="topbar__link">TRAJECTORY ↗</a>
+    <div class="topbar__tools"><span id="renderer-mode" class="topbar__renderer">RENDERER</span><button id="quality-toggle" class="topbar__quality" type="button">Q / AUTO</button><a href="#trajectory" class="topbar__link">TRAJECTORY ↗</a></div>
   </header>
 
   <aside class="progress-rail" aria-label="Story progress">
@@ -154,7 +155,7 @@
 
     <footer class="finale">
       <div class="finale__line"></div>
-      <p class="eyebrow">TWIN / PROTOCOL 0.1</p>
+      <p class="eyebrow">TWIN / PROTOCOL 0.2</p>
       <h2>A second self is not born complete.</h2>
       <p>It is reconstructed — memory by memory.</p>
       <div class="finale__actions"><a href="#top">RESTART ASCENT</a><a href="https://github.com/aisarus/Twin" target="_blank" rel="noreferrer">VIEW SOURCE ↗</a></div>
@@ -162,6 +163,6 @@
     </footer>
   </main>
 
-  <script type="module" src="./main.js"></script>
+  <script type="module" src="./protocol-02.js"></script>
 </body>
 </html>
