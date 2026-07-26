@@ -1,6 +1,6 @@
 # TWIN — cinematic digital twin story
 
-A cinematic scroll narrative about the origin, architecture and future trajectory of a persistent digital self.
+A no-build interactive manifesto about the origin, architecture and future trajectory of a persistent digital self.
 
 ## Open locally
 
@@ -10,54 +10,62 @@ Serve the folder with any static server:
 python3 -m http.server 4173
 ```
 
-Then open `http://localhost:4173`.
+Then open `http://localhost:4173` in a modern desktop browser.
 
 No npm install or build step is required.
 
-## Protocol 0.2
+## Active version: Protocol 0.3
 
-The visual world now runs through a native WebGL 2 renderer rather than a painted pseudo-3D canvas.
+Protocol 0.3 turns the continuous GPU landscape into a directed narrative space:
 
-Implemented in this pass:
+- native WebGL 2 full-screen raymarch renderer
+- procedural mountain range with strata, erosion and depth fog
+- authored twin monument and luminous signal ring at the final summit
+- chapter-specific Catmull–Rom camera path with controlled lens and roll
+- spatial memory fragments projected from world coordinates into the interface
+- animated cloud layers and ray-integrated valley mist
+- shader-rendered memory veins, particles, core and horizon beacon
+- optional procedural Web Audio soundscape; audio begins only after an explicit click
+- automatic LOW / MED / HIGH rendering quality with manual override
+- WebGL context-loss handling and a Canvas 2D fallback
+- responsive layout and reduced-motion treatment
 
-- full-screen fragment-shader raymarcher
-- procedural identity mountain range with erosion and strata
-- scroll-driven 3D camera flight
-- animated low, middle and high cloud layers
-- ray-integrated valley mist, atmospheric depth fog and summit lighting
-- shader-based morphing memory core
-- GPU memory particles and horizon beacon
-- automatic low / medium / high quality selection
-- adaptive quality downgrade when frame time is too high
-- manual quality control in the top navigation
-- WebGL context-loss handling
-- automatic Canvas 2D fallback for unsupported devices or failed shader initialization
+## Files
 
-## Story layer
+- `index.html` — semantic story and spatial-memory markup
+- `styles.css` — original editorial layout
+- `protocol-02.css` — WebGL instrumentation shared with Protocol 0.2
+- `protocol-03.css` — spatial memories, chapter transitions and sound controls
+- `protocol-03.js` — active story orchestration
+- `webgl-world-03.js` — active GPU terrain, atmosphere and summit monument
+- `camera-path.js` — authored camera spline and world-to-screen projection
+- `soundscape.js` — optional procedural audio
+- `fallback-world.js` — Canvas renderer for unsupported WebGL environments
 
-- cinematic boot / initialization sequence
-- origin and manifesto chapters
-- identity terrain
-- horizontal architecture sequence
-- first echo, ascent roadmap and future trajectory
-- responsive layout and reduced-motion support
+## Previous protocols
 
-## Architecture
+- `main.js` — Protocol 0.1 native Canvas prototype
+- `protocol-02.js` + `webgl-world.js` — Protocol 0.2 GPU foundation
 
-- `index.html` — semantic story structure
-- `styles.css` — editorial layout, transitions and responsive presentation
-- `protocol-02.js` — active loader, scroll choreography, chapter state and renderer controls
-- `webgl-world.js` — WebGL program, shader world, camera and adaptive quality
-- `fallback-world.js` — dependency-free Canvas renderer for unsupported devices
-- `main.js` — preserved Protocol 0.1 renderer for comparison and rollback
-- `protocol-02.css` — renderer instrumentation and quality controls
+The old protocols remain in the repository for comparison and rollback.
 
 ## Validation
 
-- all JavaScript modules pass `node --check`
-- repository wiring and module paths were verified after publication
-- the available headless Chromium environment cannot initialize GPU/EGL, so a visual WebGL pass still needs to be performed in a normal desktop browser; unsupported environments automatically enter the Canvas fallback
+Run the syntax checks:
 
-## Next production pass
+```bash
+node --check camera-path.js
+node --check fallback-world.js
+node --check main.js
+node --check protocol-02.js
+node --check protocol-03.js
+node --check soundscape.js
+node --check webgl-world.js
+node --check webgl-world-03.js
+```
 
-Protocol 0.3 should introduce authored scene assets and stronger narrative choreography: a custom Blender summit silhouette, text fragments embedded into the terrain, scene-specific camera splines and sound design that remains optional and user-controlled.
+The renderer intentionally falls back to Canvas when WebGL 2 or shader initialization is unavailable.
+
+## Next trajectory
+
+Protocol 0.4 can introduce authored Blender assets, real typographic textures on the terrain, a deployment preview and device-specific performance profiling.
