@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+<defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#08102e"/><stop offset="1" stop-color="#241044"/></linearGradient><linearGradient id="l"><stop stop-color="#4cfaff"/><stop offset=".48" stop-color="#7e62ff"/><stop offset="1" stop-color="#ff5598"/></linearGradient><filter id="g"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="1200" height="900" rx="34" fill="url(#b)"/>
+<g stroke="url(#l)" stroke-width="3" stroke-opacity=".56" fill="none"><path d="M162 518 320 330 515 430 662 215 820 360 1010 246"/><path d="M162 518 348 650 515 430 704 662 820 360 1005 582"/><path d="M320 330 402 174 662 215 704 662 1005 582"/><path d="M348 650 530 748 704 662"/></g>
+<g fill="#0c1228" stroke="url(#l)" stroke-width="4" filter="url(#g)"><circle cx="162" cy="518" r="32"/><circle cx="320" cy="330" r="39"/><circle cx="348" cy="650" r="28"/><circle cx="402" cy="174" r="22"/><circle cx="515" cy="430" r="58"/><circle cx="530" cy="748" r="24"/><circle cx="662" cy="215" r="34"/><circle cx="704" cy="662" r="42"/><circle cx="820" cy="360" r="48"/><circle cx="1005" cy="582" r="31"/><circle cx="1010" cy="246" r="28"/></g>
+<g fill="#d8ffff" font-family="monospace" font-size="16" text-anchor="middle"><text x="515" y="436">SELF</text><text x="320" y="336">VOICE</text><text x="704" y="668">TIME</text><text x="820" y="366">VALUES</text><text x="162" y="524">EVENT</text><text x="1005" y="588">CHANGE</text></g>
+<text x="72" y="86" fill="#7af8ff" font-family="monospace" font-size="20" letter-spacing="4">MEMORY GRAPH / SOURCE-AWARE RELATIONSHIPS</text>
+</svg>
