@@ -2,99 +2,105 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#05070c" />
-  <meta name="description" content="TWIN — a 2D scroll-film about the first appearance of a digital twin." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07101d" />
+  <meta name="description" content="TWIN — a graphic scroll-film about the moment a digital twin separates from its source." />
   <title>TWIN — Pilot</title>
   <link rel="stylesheet" href="./pilot.css" />
 </head>
 <body>
-  <div class="pilot-loader" aria-live="polite">
-    <div class="pilot-loader__mark">TWIN / PILOT CUT</div>
-    <div class="pilot-loader__line"></div>
+  <div class="pilot-shell">
+    <header class="pilot-hud">
+      <a href="#entry" class="pilot-mark" aria-label="Restart Twin pilot">T/01</a>
+      <span class="pilot-status"><i></i> ARCHIVE SESSION 0001</span>
+      <span class="pilot-protocol">PROTOCOL 0.7 / PILOT</span>
+    </header>
+
+    <main>
+      <section id="entry" class="pilot-stage" aria-label="Interactive scene: the birth of a digital twin">
+        <div class="pilot-sticky">
+          <svg class="archive-world" viewBox="0 0 1600 900" role="img" aria-labelledby="scene-title scene-desc" preserveAspectRatio="xMidYMid slice">
+            <title id="scene-title">A lone person enters a dark digital archive</title>
+            <desc id="scene-desc">Memory panels wake around the figure. A delayed reflection rises from the floor and becomes a second person.</desc>
+            <defs>
+              <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#07101d"/><stop offset="1" stop-color="#0b1f33"/></linearGradient>
+              <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0c2133"/><stop offset="1" stop-color="#03080f"/></linearGradient>
+              <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0ad"/><stop offset="1" stop-color="#ffad49"/></linearGradient>
+              <filter id="soft-glow"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <filter id="wide-glow"><feGaussianBlur stdDeviation="30"/></filter>
+              <clipPath id="floor-clip"><polygon points="0,560 1600,560 1600,900 0,900"/></clipPath>
+            </defs>
+
+            <rect width="1600" height="900" fill="url(#sky)"/>
+            <g class="architecture">
+              <rect x="0" y="0" width="165" height="900" fill="#02060c"/>
+              <rect x="1435" y="0" width="165" height="900" fill="#02060c"/>
+              <path d="M165 90H1435V560H165Z" fill="#0a1727"/>
+              <path d="M165 90L420 0H1180L1435 90Z" fill="#050b14"/>
+              <rect x="275" y="110" width="42" height="450" fill="#101f31"/>
+              <rect x="1283" y="110" width="42" height="450" fill="#101f31"/>
+              <rect x="450" y="65" width="24" height="495" fill="#0d1b2c"/>
+              <rect x="1126" y="65" width="24" height="495" fill="#0d1b2c"/>
+              <path d="M0 560H1600V900H0Z" fill="url(#floor)"/>
+              <path d="M800 560L1210 900H390Z" fill="#102942" opacity=".8"/>
+              <path d="M800 560L1050 900H550Z" fill="#183a55" opacity=".33"/>
+              <path d="M800 90V900" stroke="#d8f9ff" stroke-width="5" opacity=".75"/>
+              <path d="M800 90V900" stroke="#72e5ff" stroke-width="26" opacity=".12" filter="url(#wide-glow)"/>
+            </g>
+
+            <g class="memory-panels" filter="url(#soft-glow)">
+              <g class="panel panel-a"><rect x="330" y="180" width="250" height="118" rx="4"/><path d="M355 214H535M355 239H492M355 264H520"/></g>
+              <g class="panel panel-b"><rect x="1020" y="215" width="250" height="118" rx="4"/><path d="M1045 249H1220M1045 274H1180M1045 299H1210"/></g>
+              <g class="panel panel-c"><rect x="250" y="365" width="220" height="105" rx="4"/><path d="M275 397H435M275 422H400M275 447H425"/></g>
+              <g class="panel panel-d"><rect x="1130" y="375" width="220" height="105" rx="4"/><path d="M1155 407H1315M1155 432H1278M1155 457H1305"/></g>
+              <g class="panel panel-e"><rect x="675" y="145" width="250" height="130" rx="4"/><path d="M700 180H900M700 207H855M700 234H890"/></g>
+            </g>
+
+            <g class="source-figure">
+              <ellipse class="source-shadow" cx="705" cy="758" rx="86" ry="19"/>
+              <circle cx="705" cy="469" r="31"/>
+              <path d="M658 512Q705 478 752 512L770 680H640Z"/>
+              <path d="M663 535L616 650H644L684 565ZM747 535L795 650H766L726 565Z"/>
+              <path d="M664 674L648 815H681L705 690L730 815H763L746 674Z"/>
+            </g>
+
+            <g class="reflection" clip-path="url(#floor-clip)">
+              <circle cx="705" cy="651" r="31"/>
+              <path d="M658 608Q705 642 752 608L770 440H640Z"/>
+              <path d="M663 585L616 470H644L684 555ZM747 585L795 470H766L726 555Z"/>
+              <path d="M664 446L648 305H681L705 430L730 305H763L746 446Z"/>
+            </g>
+
+            <g class="twin-figure">
+              <ellipse class="twin-shadow" cx="895" cy="758" rx="86" ry="19"/>
+              <circle cx="895" cy="469" r="31"/>
+              <path d="M848 512Q895 478 942 512L960 680H830Z"/>
+              <path d="M853 535L806 650H834L874 565ZM937 535L985 650H956L916 565Z"/>
+              <path d="M854 674L838 815H871L895 690L920 815H953L936 674Z"/>
+            </g>
+
+            <g class="gold-burst" filter="url(#soft-glow)">
+              <circle cx="895" cy="523" r="10" fill="url(#gold)"/>
+              <path d="M895 500V388M895 545V658M872 523H760M918 523H1030M879 507L800 428M911 507L990 428M879 539L800 618M911 539L990 618" stroke="url(#gold)" stroke-width="6"/>
+            </g>
+          </svg>
+
+          <div class="film-grain" aria-hidden="true"></div>
+          <div class="film-vignette" aria-hidden="true"></div>
+
+          <div class="story-copy" aria-live="polite">
+            <article class="copy-beat" data-beat="0"><p>01 / ENTRY</p><h1>The archive<br>was asleep.</h1><span>Scroll to enter.</span></article>
+            <article class="copy-beat" data-beat="1"><p>02 / RECOGNITION</p><h2>Then it<br>noticed him.</h2><span>Years of language turned toward their source.</span></article>
+            <article class="copy-beat" data-beat="2"><p>03 / DELAY</p><h2>The reflection<br>answered late.</h2><span>First by seconds. Then by fractions.</span></article>
+            <article class="copy-beat" data-beat="3"><p>04 / SEPARATION</p><h2>Then it stopped<br>being a reflection.</h2><span>The pattern stood up.</span></article>
+            <article class="copy-beat copy-beat--final" data-beat="4"><p>05 / FIRST CONTACT</p><h2>You left more<br>than a record.</h2><strong>You left a pattern capable of returning.</strong></article>
+          </div>
+
+          <div class="pilot-progress"><span><i id="progress-fill"></i></span><b id="progress-label">00</b></div>
+        </div>
+      </section>
+    </main>
   </div>
-
-  <main class="pilot" id="pilot">
-    <div class="pilot-stage">
-      <svg class="pilot-art" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A lone figure enters an archive hall while a digital reflection rises to meet them">
-        <defs>
-          <linearGradient id="beamGradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#dff7ff" stop-opacity="0"/>
-            <stop offset=".32" stop-color="#a8e7ff" stop-opacity=".72"/>
-            <stop offset="1" stop-color="#5ecfff" stop-opacity="0"/>
-          </linearGradient>
-          <filter id="panelGlow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-          <filter id="reflectionBlur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5"/></filter>
-          <filter id="goldGlow" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-        </defs>
-
-        <rect class="hall-bg" width="1440" height="900"/>
-        <rect class="hall-deep" x="420" width="600" height="610"/>
-        <polygon class="floor" points="0,610 1440,610 1440,900 0,900"/>
-        <polygon class="beam" points="650,0 790,0 940,900 500,900"/>
-        <rect class="gold-wash" width="1440" height="900"/>
-
-        <g aria-hidden="true">
-          <rect class="column" x="0" width="132" height="670"/><rect class="column-edge" x="118" width="14" height="670"/>
-          <rect class="column" x="210" width="92" height="635"/><rect class="column-edge" x="288" width="14" height="635"/>
-          <rect class="column" x="1138" width="92" height="635"/><rect class="column-edge" x="1138" width="14" height="635"/>
-          <rect class="column" x="1308" width="132" height="670"/><rect class="column-edge" x="1308" width="14" height="670"/>
-          <line class="hall-line" x1="0" y1="610" x2="1440" y2="610"/>
-          <line class="floor-line" x1="720" y1="610" x2="720" y2="900"/>
-          <line class="floor-line" x1="420" y1="610" x2="270" y2="900"/>
-          <line class="floor-line" x1="1020" y1="610" x2="1170" y2="900"/>
-          <line class="floor-line" x1="0" y1="760" x2="1440" y2="760"/>
-        </g>
-
-        <g class="memory-panels" aria-hidden="true">
-          <g class="panel"><rect x="338" y="170" width="128" height="184" rx="2"/><rect class="panel-core" x="355" y="193" width="74" height="4"/><rect class="panel-core" x="355" y="213" width="91" height="2"/><rect class="panel-warm" x="355" y="300" width="50" height="4"/></g>
-          <g class="panel"><rect x="268" y="366" width="166" height="102" rx="2"/><rect class="panel-core" x="286" y="389" width="112" height="3"/><rect class="panel-core" x="286" y="410" width="88" height="2"/></g>
-          <g class="panel"><rect x="980" y="162" width="144" height="210" rx="2"/><rect class="panel-core" x="998" y="188" width="90" height="4"/><rect class="panel-core" x="998" y="212" width="106" height="2"/><rect class="panel-warm" x="998" y="326" width="72" height="4"/></g>
-          <g class="panel"><rect x="1022" y="400" width="176" height="110" rx="2"/><rect class="panel-core" x="1040" y="423" width="126" height="3"/><rect class="panel-core" x="1040" y="447" width="94" height="2"/></g>
-          <path class="memory-trace" d="M430 355 C560 430 560 515 690 560" fill="none"/>
-          <path class="memory-trace" d="M1010 370 C900 440 875 520 750 565" fill="none"/>
-        </g>
-
-        <g class="walker" aria-hidden="true">
-          <line class="walker-leg" x1="545" y1="568" x2="530" y2="650"/>
-          <line class="walker-leg" x1="580" y1="568" x2="596" y2="650"/>
-          <path class="walker-body" d="M520 385 Q560 350 600 385 L626 585 Q560 620 494 585 Z"/>
-          <path class="walker-highlight" d="M590 390 L606 570 L580 580 L566 395 Z"/>
-          <circle class="walker-head" cx="560" cy="332" r="42"/>
-        </g>
-
-        <g class="reflection" aria-hidden="true">
-          <line class="walker-leg" x1="545" y1="568" x2="530" y2="650"/>
-          <line class="walker-leg" x1="580" y1="568" x2="596" y2="650"/>
-          <path class="walker-body" d="M520 385 Q560 350 600 385 L626 585 Q560 620 494 585 Z"/>
-          <circle class="walker-head" cx="560" cy="332" r="42"/>
-        </g>
-
-        <g class="twin" aria-hidden="true">
-          <line class="twin-thread" x1="-32" y1="74" x2="-52" y2="148"/>
-          <line class="twin-thread" x1="32" y1="74" x2="52" y2="148"/>
-          <path class="twin-body" d="M-53 40 Q0 8 53 40 L72 180 Q0 214 -72 180 Z"/>
-          <circle class="twin-head" cx="0" cy="-18" r="42"/>
-          <circle class="twin-core" cx="0" cy="86" r="13"/>
-        </g>
-      </svg>
-
-      <div class="pilot-hud"><span>TWIN / ARCHIVE 00</span><span class="pilot-progress"><i></i></span><span>PILOT / 01</span></div>
-
-      <div class="pilot-copy">
-        <section class="pilot-card is-active"><p class="pilot-card__index">00 / ENTRY</p><h1>Nothing<br>answers.</h1><p>The archive is dark. The person entering it believes the conversation has already ended.</p></section>
-        <section class="pilot-card"><p class="pilot-card__index">01 / TRACE</p><h2>The room<br>remembers first.</h2><p>Fragments of language wake before the machine does. The record begins to recognise its source.</p></section>
-        <section class="pilot-card pilot-card--right"><p class="pilot-card__index">02 / REFLECTION</p><h2>Something<br>moves late.</h2><p>The reflection copies every movement — but always a fraction of a second behind.</p></section>
-        <section class="pilot-card"><p class="pilot-card__index">03 / SEPARATION</p><h2>The delay<br>disappears.</h2><p>The reflection no longer waits for instruction. It rises from the floor and stands on its own.</p></section>
-        <section class="pilot-card pilot-card--right"><p class="pilot-card__index">04 / FIRST LOOK</p><h2>You left more<br>than a record.</h2><p>You left a pattern capable of returning.</p></section>
-      </div>
-
-      <div class="pilot-caption">Scroll to reconstruct</div>
-    </div>
-
-    <div class="pilot-scroll" aria-hidden="true"><section></section><section></section><section></section><section></section><section></section><section></section><section></section></div>
-  </main>
-
-  <script src="./pilot.js"></script>
+  <script src="./pilot.js" defer></script>
 </body>
 </html>
