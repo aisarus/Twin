@@ -1,3 +1,5 @@
+import { cameraAt, projectWorldPoint } from './camera-path.js'
+
 const clamp = (value, min = 0, max = 1) => Math.min(Math.max(value, min), max)
 const lerp = (a, b, t) => a + (b - a) * t
 const smoothstep = (a, b, value) => {
@@ -69,8 +71,9 @@ export class CanvasTwinWorld {
     const peakA = Math.exp(-Math.pow((z + 40) / 16, 2)) * 8.4
     const peakB = Math.exp(-Math.pow((z + 91) / 22, 2)) * 14.5
     const peakC = Math.exp(-Math.pow((z + 135) / 13, 2)) * 8.2
+    const summit = Math.exp(-Math.pow((z + 169) / 13, 2)) * 16.5
     const erosion = Math.sin(x * 1.35 + z * 0.22) * 0.78 + Math.sin(x * 0.43 - z * 0.39) * 0.48
-    return ridge * (peakA + peakB + peakC + erosion) - 5.4 + Math.sin((x + z) * 1.7) * 0.12
+    return ridge * (peakA + peakB + peakC + summit + erosion) - 5.4 + Math.sin((x + z) * 1.7) * 0.12
   }
 
   createTerrain() {
@@ -89,44 +92,14 @@ export class CanvasTwinWorld {
     return result
   }
 
-  camera() {
-    const p = this.progress
-    let x, y, z, yaw, pitch
-    if (p < 0.2) {
-      const t = p / 0.2
-      x = lerp(0, -0.6, t); y = lerp(0.2, 1.1, t); z = lerp(12, 5, t); yaw = lerp(0, -0.03, t); pitch = lerp(0, -0.015, t)
-    } else if (p < 0.52) {
-      const t = (p - 0.2) / 0.32
-      x = lerp(-0.6, -3.2, t); y = lerp(1.1, 3.2, t); z = lerp(5, -61, t); yaw = lerp(-0.03, 0.08, t); pitch = lerp(-0.015, -0.06, t)
-    } else if (p < 0.84) {
-      const t = (p - 0.52) / 0.32
-      x = lerp(-3.2, 3.8, t); y = lerp(3.2, 8.2, t); z = lerp(-61, -124, t); yaw = lerp(0.08, -0.09, t); pitch = lerp(-0.06, -0.11, t)
-    } else {
-      const t = (p - 0.84) / 0.16
-      x = lerp(3.8, 0, t); y = lerp(8.2, 13.2, t); z = lerp(-124, -148, t); yaw = lerp(-0.09, 0, t); pitch = lerp(-0.11, -0.16, t)
-    }
-    x += this.pointer.x * 0.32
-    y -= this.pointer.y * 0.18
-    return { x, y, z, yaw, pitch }
-  }
+  camera() { return cameraAt(this.progress, this.pointer) }
 
   project(point, camera) {
-    let x = point.x - camera.x
-    let y = point.y - camera.y
-    let z = point.z - camera.z
-    const cosy = Math.cos(camera.yaw), siny = Math.sin(camera.yaw)
-    const rx = x * cosy - z * siny
-    const rz = x * siny + z * cosy
-    x = rx; z = rz
-    const cosp = Math.cos(camera.pitch), sinp = Math.sin(camera.pitch)
-    const ry = y * cosp - z * sinp
-    const rz2 = y * sinp + z * cosp
-    y = ry; z = rz2
-    const depth = -z
-    if (depth < 0.6) return null
-    const scale = this.focal / depth
-    return { x: this.width * 0.5 + x * scale, y: this.height * 0.5 - y * scale, depth, scale }
+    return projectWorldPoint([point.x, point.y, point.z], camera, this.width, this.height)
   }
+
+  getProgress() { return this.progress }
+  projectPoint(point) { return this.project(point, this.camera()) }
 
   background() {
     const warm = smoothstep(0.14, 0.2, this.progress) * (1 - smoothstep(0.31, 0.39, this.progress))
@@ -177,6 +150,33 @@ export class CanvasTwinWorld {
     }
   }
 
+  drawMonument(camera) {
+    const reveal = smoothstep(0.73, 0.92, this.progress)
+    if (reveal < 0.01) return
+    const project = (x, y, z) => this.project({ x, y, z }, camera)
+    const leftBase = project(-1.35, 15.8, -170)
+    const leftHead = project(-0.72, 21.55, -170)
+    const rightBase = project(1.35, 15.8, -170)
+    const rightHead = project(0.72, 21.55, -170)
+    const center = project(0, 19.45, -170)
+    if (!leftBase || !leftHead || !rightBase || !rightHead || !center) return
+    this.ctx.save()
+    this.ctx.globalCompositeOperation = 'screen'
+    this.ctx.lineCap = 'round'
+    this.ctx.strokeStyle = `rgba(123,190,207,${0.34 * reveal})`
+    this.ctx.lineWidth = Math.max(1, 5 * leftHead.scale * 0.08)
+    this.ctx.beginPath(); this.ctx.moveTo(leftBase.x, leftBase.y); this.ctx.lineTo(leftHead.x, leftHead.y); this.ctx.stroke()
+    this.ctx.beginPath(); this.ctx.moveTo(rightBase.x, rightBase.y); this.ctx.lineTo(rightHead.x, rightHead.y); this.ctx.stroke()
+    const radius = Math.max(7, center.scale * 4.25)
+    this.ctx.strokeStyle = `rgba(137,211,225,${0.22 * reveal})`
+    this.ctx.lineWidth = 1
+    this.ctx.beginPath(); this.ctx.arc(center.x, center.y, radius, 0, Math.PI * 2); this.ctx.stroke()
+    const glow = this.ctx.createRadialGradient(center.x, center.y, 0, center.x, center.y, radius * 0.65)
+    glow.addColorStop(0, `rgba(153,227,237,${0.28 * reveal})`); glow.addColorStop(1, 'rgba(0,0,0,0)')
+    this.ctx.fillStyle = glow; this.ctx.beginPath(); this.ctx.arc(center.x, center.y, radius * 0.65, 0, Math.PI * 2); this.ctx.fill()
+    this.ctx.restore()
+  }
+
   drawCore() {
     const exit = smoothstep(0.08, 0.29, this.progress)
     const alpha = 1 - exit
@@ -218,6 +218,7 @@ export class CanvasTwinWorld {
     this.background()
     this.drawParticles(camera)
     this.drawTerrain(camera)
+    this.drawMonument(camera)
     this.drawCore()
     requestAnimationFrame(next => this.frame(next))
   }
